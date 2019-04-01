@@ -14,13 +14,10 @@ pipeline {
 
     stages {
         stage('initialize') {
-            environment {
-                APPLICATION_NAME = "${env.GITHUB_NAME}"
-                DEPLOY_TO="production"
-            }
             steps {
                 init action: 'default'
                 script {
+                    env.DEPLOY_TO="production"
                     env.APPLICATION_VERSION=env.COMMIT_HASH_SHORT
                 }
             }
