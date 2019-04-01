@@ -31,18 +31,14 @@ pipeline {
             }
         }
         stage('deploy to preprod') {
-            stage("deploy to preprod FSS") {
-                steps {
-                    deployApp action: 'kubectlDeploy', cluster: 'preprod-fss'
-                }
+            steps {
+                deployApp action: 'kubectlDeploy', cluster: 'preprod-fss'
             }
         }
         stage('deploy to production') {
             when { environment name: 'DEPLOY_TO', value: 'production' }
-            stage("deploy to prod FSS") {
-                steps {
-                    deployApp action: 'kubectlDeploy', cluster: 'prod-fss'
-                }
+            steps {
+                deployApp action: 'kubectlDeploy', cluster: 'prod-fss'
             }
         }
         stage('tag git release') {
