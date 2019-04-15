@@ -42,4 +42,4 @@ templates will look like in production.
 * Kevin Sillerud, `kevin.sillerud@nav.no`
 
 ### For NAV employees
-We are also available on the slack channel #integrasjon for internal communication.
+We are also available on the slack channel #barken for internal communication.

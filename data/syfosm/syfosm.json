@@ -1,7 +1,4 @@
 {
-  "metadata": {
-    "signaturDato": "2018-10-13"
-  },
   "pasient": {
     "fornavn": "Fornavn",
     "mellomnavn": "Mellomnavn",
@@ -180,11 +177,13 @@
         "kommune": "STORD",
         "postboks": "19065 Kirkeveien",
         "land": "NO"
-      }
+      },
+      "tlf": "25003000"
     },
     "avsenderSystem": {
       "navn": "NAV Test generator",
       "versjon": "1.0"
-    }
+    },
+    "signaturDato": "2018-10-13"
   }
 }
