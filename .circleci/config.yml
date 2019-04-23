@@ -16,7 +16,7 @@ jobs:
             docker push navikt/syfopdfgen:${CIRCLE_SHA1}
       - run: # Username and password is set through $DEPLOYMENT_USERNAME and $DEPLOYMENT_PASSWORD
           name: Create deployment request
-          command: deployment-cli deploy create --environment=dev-fss --repository=navikt/syfopdfgen --team=teamsykefravr -r=naiserator.yaml --version ${CIRCLE_SHA1}
+          command: deployment-cli deploy create --environment=dev-fss --repository=navikt/syfopdfgen --team=teamsykefravr -u ${DEPLOYMENT_USERNAME} -r=naiserator.yaml --version ${CIRCLE_SHA1}
 workflows:
   version: 2
   build_and_deploy:
