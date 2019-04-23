@@ -6,7 +6,7 @@ metadata:
   labels:
     team: {{team}}
 spec:
-  image: "repo.adeo.no:5443/syfo/syfopdfgen:{{version}}"
+  image: "navikt/syfopdfgen:{{version}}"
   port: 8080
   replicas:
     min: 1
