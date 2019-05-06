@@ -3,34 +3,35 @@
     "fornavn": "Fornavn",
     "mellomnavn": "Mellomnavnsen",
     "etternavn": "Etternavn",
-    "personnummer": "123456789"
+    "personnummer": "123456789",
+    "tlfNummer": "98765432"
   },
   "hovedDiagnose": {
-    "code": "K24",
-    "text": "Engstelig for hjertesykdom",
+    "kode": "K24",
+    "tekst": "Engstelig for hjertesykdom",
     "oid": "2.16.578.1.12.4.1.1.7170"
   },
   "biDiagnoser": [
     {
-      "code": "-57",
-      "text": "Fysikalsk behandling/rehabilitering",
+      "kode": "-57",
+      "tekst": "Fysikalsk behandling/rehabilitering",
       "oid": "2.16.578.1.12.4.1.1.7170"
     }
   ],
   "annenFraversArsakGrunn": [
     {
-      "code": "5",
-      "text": "Når vedkommende er til nødvendig kontrollundersøkelse som krever minst 24 timers fravær, reisetid medregnet",
+      "kode": "5",
+      "tekst": "Når vedkommende er til nødvendig kontrollundersøkelse som krever minst 24 timers fravær, reisetid medregnet",
       "oid": "2.16.578.1.12.4.1.1.8131"
     },
     {
-      "code": "6",
-      "text": "Når vedkommende myndighet har nedlagt forbud mot at han eller hun arbeider på grunn av smittefare",
+      "kode": "6",
+      "tekst": "Når vedkommende myndighet har nedlagt forbud mot at han eller hun arbeider på grunn av smittefare",
       "oid": "2.16.578.1.12.4.1.1.8131"
     },
     {
-      "code": "4",
-      "text": "Når vedkommende på grunn av sykdom, skade eller lyte får tilskott når vedkommende på grunn av sykdom, skade eller lyte får tilskott",
+      "kode": "4",
+      "tekst": "Når vedkommende på grunn av sykdom, skade eller lyte får tilskott når vedkommende på grunn av sykdom, skade eller lyte får tilskott",
       "oid": "2.16.578.1.12.4.1.1.8131"
     }
   ],

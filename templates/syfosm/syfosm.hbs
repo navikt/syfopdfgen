@@ -135,7 +135,7 @@
         <!-- TODO: This needs to be a part of the json payload -->
         <td><h4>1.3</h4></td>
         <td>Telefon</td>
-        <td>{{ pasient.telefon }}</td>
+        <td>{{ pasient.tlfNummer }}</td>
     </tr>
     <tr>
         <td><h4>1.4</h4></td>
@@ -205,11 +205,11 @@
             </td>
             <td>
                 <h4>3.1.2 Kode</h4>
-                <p>{{ hovedDiagnose.code }}</p>
+                <p>{{ hovedDiagnose.kode }}</p>
             </td>
             <td>
                 <h4>3.1.3 Diagnose</h4>
-                <p>{{ hovedDiagnose.text }}</p>
+                <p>{{ hovedDiagnose.tekst }}</p>
             </td>
         </tr>
     {{/if}}
@@ -234,13 +234,13 @@
                 <h4>3.1.2 Kode</h4>
                 {{#each biDiagnoser }}
                     <p>
-                        {{ code }}</p>
+                        {{ kode }}</p>
                 {{/each}}
             </td>
             <td>
                 <h4>3.1.3 Diagnose</h4>
                 {{#each biDiagnoser }}
-                    <p>{{ text }}</p>
+                    <p>{{ tekst }}</p>
                 {{/each}}
             </td>
         </tr>
