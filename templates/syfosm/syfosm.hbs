@@ -132,6 +132,7 @@
         <td>{{ pasient.personnummer }}</td>
     </tr>
     <tr>
+        <!-- TODO: This needs to be a part of the json payload -->
         <td><h4>1.3</h4></td>
         <td>Telefon</td>
         <td>{{ pasient.telefon }}</td>
@@ -204,19 +205,18 @@
             </td>
             <td>
                 <h4>3.1.2 Kode</h4>
-                <p>{{ sykmelding.medisinskVurdering.hovedDiagnose.kode }}</p>
+                <p>{{ hovedDiagnose.code }}</p>
             </td>
             <td>
-                <!-- TODO: Map this to text, somehow... -->
                 <h4>3.1.3 Diagnose</h4>
-                <p>{{ sykmelding.medisinskBurdering.hovedDiagnose.kode }}</p>
+                <p>{{ hovedDiagnose.text }}</p>
             </td>
         </tr>
     {{/if}}
-    {{#if symelding.medisinskVurdering.biDiagnoser }}
+    {{#if biDiagnoser }}
         <tr>
             <td><h4>3.2</h4></td>
-            <td>Bidiagnoser</td>
+            <td><h4>Bidiagnoser</h4></td>
             <td>
                 <h4>3.1.1 Kodesystem</h4>
                 <p>
@@ -232,16 +232,15 @@
             </td>
             <td>
                 <h4>3.1.2 Kode</h4>
-                {{#each sykmelding.medisinskVurdering.biDiagnoser }}
+                {{#each biDiagnoser }}
                     <p>
-                        {{ kode }}</p>
+                        {{ code }}</p>
                 {{/each}}
             </td>
             <td>
-                <!-- TODO: Map this to text, somehow... -->
                 <h4>3.1.3 Diagnose</h4>
-                {{#each sykmelding.medisinskVurdering.biDiagnoser }}
-                    <p>{{ kode }}</p>
+                {{#each biDiagnoser }}
+                    <p>{{ text }}</p>
                 {{/each}}
             </td>
         </tr>
@@ -250,16 +249,14 @@
         <tr>
             <td><h4>3.3</h4></td>
             <td><h4>Annen fraværsgrunn</h4></td>
-            <td>
+            <td colspan="2">
                 <h4>3.3.1 Lovfestet fraværsgrunn</h4>
-                <!-- TODO: Map from enum to text -->
-                {{#each sykmelding.medisinskVurdering.annenFraversArsak.grunn }}
+                {{#each annenFraversArsakGrunn }}
                     <p>
-                        {{ this }}
+                        {{ text }}
                     </p>
                 {{/each }}
             </td>
-            <td></td>
             <td>
                 <h4>3.3.2 Beskriv fravær</h4>
                 <p>{{ sykmelding.medisinskVurdering.annenFraversArsak.beskrivelse }}</p>

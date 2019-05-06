@@ -1,42 +1,13 @@
 {
   "pasient": {
     "fornavn": "Fornavn",
-    "mellomnavn": "Mellomnavnsen",
-    "etternavn": "Etternavn",
-    "personnummer": "123456789"
+    "mellomnavn": "Mellomnavn",
+    "etternavn": "Etternavnsen",
+    "personnummer": "22110054321",
+    "telefon": "98765432"
   },
-  "hovedDiagnose": {
-    "code": "K24",
-    "text": "Engstelig for hjertesykdom",
-    "oid": "2.16.578.1.12.4.1.1.7170"
-  },
-  "biDiagnoser": [
-    {
-      "code": "-57",
-      "text": "Fysikalsk behandling/rehabilitering",
-      "oid": "2.16.578.1.12.4.1.1.7170"
-    }
-  ],
-  "annenFraversArsakGrunn": [
-    {
-      "code": "5",
-      "text": "Når vedkommende er til nødvendig kontrollundersøkelse som krever minst 24 timers fravær, reisetid medregnet",
-      "oid": "2.16.578.1.12.4.1.1.8131"
-    },
-    {
-      "code": "6",
-      "text": "Når vedkommende myndighet har nedlagt forbud mot at han eller hun arbeider på grunn av smittefare",
-      "oid": "2.16.578.1.12.4.1.1.8131"
-    },
-    {
-      "code": "4",
-      "text": "Når vedkommende på grunn av sykdom, skade eller lyte får tilskott når vedkommende på grunn av sykdom, skade eller lyte får tilskott",
-      "oid": "2.16.578.1.12.4.1.1.8131"
-    }
-  ],
   "sykmelding": {
     "id": "detteerensykmeldingid",
-    "msgId": "abcdef",
     "pasientAktoerId": "41234123",
     "medisinskVurdering": {
       "hovedDiagnose": {
@@ -57,7 +28,7 @@
         "grunn": [
           "NODVENDIG_KONTROLLUNDENRSOKELSE",
           "SMITTEFARE",
-          "MOTTAR_TILSKUDD_GRUNNET_HELSETILSTAND"
+          "ANNET"
         ]
       }
     },
@@ -83,13 +54,9 @@
         "tom": "2018-10-12",
         "aktivitetIkkeMulig": {
           "medisinskArsak": {
-            "beskrivelse": "Grunnet brukket bein kan ikke pasienten gå opp trapper",
-            "arsak": [
-              "TILSTAND_HINDRER_AKTIVITET",
-              "AKTIVITET_FORHINDRER_BEDRING"
-            ]
-          },
-          "arbeidsrelatertArsak": null
+            "arsak": ["MANGLENDE_TILRETTELEGGING", "ANNET"],
+            "beskrivelse": "Grunnet brukket bein kan ikke pasienten gå opp trapper"
+          }
         },
         "avventendeInnspillTilArbeidsgiver": null,
         "behandlingsdager": null,
@@ -100,13 +67,9 @@
         "fom": "2018-10-13",
         "tom": "2018-10-17",
         "aktivitetIkkeMulig": {
-          "medisinskArsak": null,
           "arbeidsrelatertArsak": {
-            "beskrivelse": "Grunnet brukket bein kan ikke pasienten gå opp trapper",
-            "arsak": [
-              "MANGLENDE_TILRETTELEGGING",
-              "ANNET"
-            ]
+            "arsak": ["MANGLENDE_TILRETTELEGGING", "ANNET"],
+            "beskrivelse": "Grunnet brukket bein kan ikke pasienten gå opp trapper"
           }
         },
         "avventendeInnspillTilArbeidsgiver": null,
@@ -221,7 +184,6 @@
       "navn": "NAV Test generator",
       "versjon": "1.0"
     },
-    "syketilfelleStartDato": null,
     "signaturDato": "2018-10-14T14:52:35"
   }
 }
