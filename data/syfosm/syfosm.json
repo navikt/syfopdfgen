@@ -224,5 +224,20 @@
     },
     "syketilfelleStartDato": null,
     "signaturDato": "2018-10-14T14:52:35"
+  },
+  "validationResult": {
+    "status": "INVALID",
+    "ruleHits": [
+      {
+        "ruleName": "BEHANDLER_KI_NOT_USING_VALID_DIAGNOSECODE_TYPE",
+        "messageForSender": "Behandler er manuellterapeut/kiropraktor eller fysioterapeut med autorisasjon har angitt annen diagnose enn kapitel L (muskel og skjelettsykdommer)",
+        "messageForUser": "Den som skrev sykmeldingen mangler autorisasjon."
+      },
+      {
+        "ruleName": "NUMBER_OF_TREATMENT_DAYS_SET",
+        "messageForSender": "Hvis behandlingsdager er angitt sendes meldingen til manuell behandling.",
+        "messageForUser": "Hvis behandlingsdager er angitt sendes meldingen til manuell behandling."
+      }
+    ]
   }
 }

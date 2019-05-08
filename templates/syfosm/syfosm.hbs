@@ -92,13 +92,13 @@
         .infoblock {
         }
     </style>
-    <title>Sykmelding for {{ pasient.fornavn }}{{#if pasient.mellomnavn }} {{pasient.mellomnavn}}{{/if}} {{pasient.etternavn}}</title>
+    <title>{{#eq validationResult.status "INVALID" }}AVVIST{{/eq}} Sykmelding for {{ pasient.fornavn }}{{#if pasient.mellomnavn }} {{pasient.mellomnavn}}{{/if}} {{pasient.etternavn}}</title>
 </head>
 <body>
 <table class="header">
     <thead>
     <tr>
-        <td class="tr75">SYKMELDING</td>
+        <td class="tr75">{{#eq validationResult.status "INVALID" }}AVVIST{{/eq}} SYKMELDING</td>
         <td>NAVs eksemplar</td>
     </tr>
     </thead>
@@ -618,5 +618,28 @@
     </tr>
     </tbody>
 </table>
+
+{{#eq validationResult.status "INVALID" }}
+<table>
+    <thead>
+    <tr>
+        <td class="tr10"><h4>13</h4></td>
+        <td class="tr60"><h4>Begrunnelse for avvising</h4></td>
+        <td></td>
+    </tr>
+    </thead>
+    <tr>
+        <td colspan="0"></td>
+        <td>
+            <ul>{{#each validationResult.ruleHits}}
+                <li>{{messageForSender}}</li>
+                {{/each}}
+            </ul>
+        </td>
+    </tr>
+    </tbody>
+</table>
+{{/eq}}
+
 </body>
 </html>
