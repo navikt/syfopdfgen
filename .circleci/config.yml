@@ -2,7 +2,7 @@ version: 2
 jobs:
   deploy:
     docker:
-      - image: "navikt/deployment-cli:v0.1.2"
+      - image: "navikt/deployment-cli:7249560e343019d1bdf02fc9813db8938807c2b0"
     steps:
       - checkout
       - setup_remote_docker
