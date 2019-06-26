@@ -17,16 +17,19 @@
     "arbeidsgiver": {
       "navn": "NAV IKT",
       "adresse": "Sannergata 2",
-      "postnummer": 557,
+      "postnummer": "0557",
       "poststed": "Oslo"
     }
   },
   "sykdomsOpplysninger": {
     "hoveddiagnose": {
-      "tekst": "Tekst",
-      "kode": "test"
+      "tekst": "Fysikalsk behandling/rehabilitering",
+      "kode": "-57"
     },
-    "bidiagnose": [],
+    "bidiagnose": [{
+      "tekst": "Engstelig for hjertesykdom",
+      "kode": "K24"
+    }],
     "arbeidsufoerFra": "2019-06-23T08:12:03.866543+02:00",
     "sykdomsHistorie": "Tekst",
     "statusPresens": "Tekst",
@@ -99,7 +102,7 @@
     "tlfNummer": "98765432"
   },
   "validationResult": {
-    "status": "MANUAL_PROCESSING",
+    "status": "INVALID",
     "ruleHits": [
       {
         "ruleName": "BEHANDLER_KI_NOT_USING_VALID_DIAGNOSECODE_TYPE",
