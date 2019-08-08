@@ -225,7 +225,8 @@
       "versjon": "1.0"
     },
     "syketilfelleStartDato": "2019-01-01",
-    "signaturDato": "2018-10-14T14:52:35"
+    "signaturDato": "2018-10-14T14:52:35",
+    "navnFastlege": "Per Hansen"
   },
   "validationResult": {
     "status": "INVALID",
