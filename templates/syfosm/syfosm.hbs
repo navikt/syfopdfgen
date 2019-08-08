@@ -104,13 +104,24 @@
     </thead>
 </table>
 
-<table class="preamble">
+<table class="infoblock">
+    <thead>
     <tr>
-        <td class="tr10"></td>
-        <td class="tr65">Når startet det legemeldte fraværet</td>
-        <td>{{ iso_to_date sykmelding.perioder.1.fom }}</td>
+        <td class="tr10"><h4>0</h4></td>
+        <td class="tr65"><h4>Syketilfelle start dato</h4></td>
+        <td></td>
     </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><h4>0</h4></td>
+        <td>Når startet det legemeldte fraværet</td>
+        <td>{{ iso_to_date sykmelding.syketilfelleStartDato }}</td>
+    </tr>
+    </tbody>
 </table>
+
+
 <table class="infoblock">
     <thead>
     <tr>
@@ -447,6 +458,10 @@
             {{#each this}}
                 <tr>
                     <td><h4>{{ @key }}</h4></td>
+                    <td>{{ sporsmal }}</td>
+                </tr>
+                <tr>
+                    <td></td>
                     <td>{{ svar }}</td>
                 </tr>
             {{/each}}

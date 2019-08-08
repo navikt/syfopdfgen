@@ -175,12 +175,14 @@
     "utdypendeOpplysninger": {
       "6.3": {
         "6.3.1": {
+          "sporsmal": "Er pasienten veldig syk?",
           "svar": "word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word",
           "restriksjoner": [
             "SKJERMET_FOR_ARBEIDSGIVER"
           ]
         },
         "6.3.2": {
+          "sporsmal": "Er pasienten klar får å jobbe?",
           "svar": "word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word word",
           "restriksjoner": [
             "SKJERMET_FOR_ARBEIDSGIVER"
@@ -222,7 +224,7 @@
       "navn": "NAV Test generator",
       "versjon": "1.0"
     },
-    "syketilfelleStartDato": null,
+    "syketilfelleStartDato": "2019-01-01",
     "signaturDato": "2018-10-14T14:52:35"
   },
   "validationResult": {
