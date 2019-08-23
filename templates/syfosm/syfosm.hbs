@@ -308,7 +308,8 @@
     <thead>
     <tr>
         <td class="tr10">4</td>
-        <td class="tr50">Mulighet for arbeid</td>
+        <td class="tr30">Mulighet for arbeid</td>
+        <td class="tr15"></td>
         <td class="tr15"></td>
         <td class="tr15"></td>
         <td class="tr15"></td>
@@ -346,6 +347,7 @@
             <td><h5>4.2.1 f.o.m.</h5></td>
             <td><h5>4.2.2 t.o.m.</h5></td>
             <td><h5>4.2.3 grad</h5></td>
+            <td><h5>4.2.3 reisetilskudd</h5></td>
         </tr>
         {{#each sykmelding.perioder }}
             {{#if gradert}}
@@ -354,6 +356,13 @@
                     <td>{{iso_to_date fom }}</td>
                     <td>{{iso_to_date tom }}</td>
                     <td>{{ gradert.grad }}</td>
+                    <td>
+                      {{#if gradert.reisetilskudd }}
+                         Ja
+                      {{else}}
+                          Nei
+                      {{/if}}
+                    </td>
                 </tr>
             {{/if}}
         {{/each}}
