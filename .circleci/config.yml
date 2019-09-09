@@ -20,6 +20,23 @@ jobs:
       - run: # Username and password is set through $DEPLOYMENT_USERNAME and $DEPLOYMENT_PASSWORD
           name: Create deployment request for prod
           command: deployment-cli deploy create --cluster=prod-fss --repository=navikt/syfopdfgen --team=teamsykefravr -r=naiserator.yaml --version=${CIRCLE_SHA1}
+  devdeploy:
+    docker:
+      - image: "navikt/deployment-cli:v0.1.4"
+      steps:
+        - checkout
+        - setup_remote_docker
+        - run:
+            name: Build docker image
+            command: docker build -t navikt/syfopdfgen:${CIRCLE_SHA1} .
+        - run:
+            name: Release docker image
+            command: |
+              echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+              docker push navikt/syfopdfgen:${CIRCLE_SHA1}
+        - run: # Username and password is set through $DEPLOYMENT_USERNAME and $DEPLOYMENT_PASSWORD
+            name: Create deployment request for development
+            command: deployment-cli deploy create --cluster=dev-fss --repository=navikt/syfopdfgen --team=teamsykefravr -r=naiserator.yaml --version=${CIRCLE_SHA1}
 workflows:
   version: 2
   build_and_deploy:
@@ -28,3 +45,7 @@ workflows:
           filters:
             branches:
               only: master
+      - devdeploy:
+          filters:
+            branches:
+              ignore: master
