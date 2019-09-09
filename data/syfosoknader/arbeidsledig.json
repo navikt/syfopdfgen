@@ -43,7 +43,9 @@
       "pavirkerAndreSporsmal": false,
       "kriterieForVisningAvUndersporsmal": null,
       "svar": [
-        {"verdi": "CHECKED"}
+        {
+          "verdi": "CHECKED"
+        }
       ],
       "undersporsmal": []
     },
@@ -57,7 +59,11 @@
       "max": null,
       "pavirkerAndreSporsmal": false,
       "kriterieForVisningAvUndersporsmal": "JA",
-      "svar": [{"verdi": "JA"}],
+      "svar": [
+        {
+          "verdi": "JA"
+        }
+      ],
       "undersporsmal": [
         {
           "id": "3",
@@ -107,7 +113,11 @@
               "max": null,
               "pavirkerAndreSporsmal": false,
               "kriterieForVisningAvUndersporsmal": null,
-              "svar": [{"verdi": "CHECKED"}],
+              "svar": [
+                {
+                  "verdi": "CHECKED"
+                }
+              ],
               "undersporsmal": []
             },
             {
@@ -120,7 +130,11 @@
               "max": null,
               "pavirkerAndreSporsmal": false,
               "kriterieForVisningAvUndersporsmal": null,
-              "svar": [{"verdi": "CHECKED"}],
+              "svar": [
+                {
+                  "verdi": "CHECKED"
+                }
+              ],
               "undersporsmal": []
             },
             {
@@ -159,7 +173,11 @@
               "max": null,
               "pavirkerAndreSporsmal": false,
               "kriterieForVisningAvUndersporsmal": null,
-              "svar": [{"verdi": "CHECKED"}],
+              "svar": [
+                {
+                  "verdi": "CHECKED"
+                }
+              ],
               "undersporsmal": []
             },
             {
@@ -189,7 +207,11 @@
       "max": null,
       "pavirkerAndreSporsmal": false,
       "kriterieForVisningAvUndersporsmal": "JA",
-      "svar": [{"verdi": "NEI"}],
+      "svar": [
+        {
+          "verdi": "JA"
+        }
+      ],
       "undersporsmal": [
         {
           "id": "13",
@@ -213,7 +235,11 @@
               "max": null,
               "pavirkerAndreSporsmal": false,
               "kriterieForVisningAvUndersporsmal": null,
-              "svar": [],
+              "svar": [
+                {
+                  "verdi": "CHECKED"
+                }
+              ],
               "undersporsmal": []
             },
             {
@@ -239,7 +265,11 @@
               "max": null,
               "pavirkerAndreSporsmal": false,
               "kriterieForVisningAvUndersporsmal": null,
-              "svar": [],
+              "svar": [
+                {
+                  "verdi": "CHECKED"
+                }
+              ],
               "undersporsmal": []
             },
             {
@@ -304,7 +334,11 @@
               "max": null,
               "pavirkerAndreSporsmal": false,
               "kriterieForVisningAvUndersporsmal": null,
-              "svar": [{"verdi": "CHECKED"}],
+              "svar": [
+                {
+                  "verdi": "CHECKED"
+                }
+              ],
               "undersporsmal": []
             }
           ]
@@ -321,7 +355,11 @@
       "max": null,
       "pavirkerAndreSporsmal": false,
       "kriterieForVisningAvUndersporsmal": null,
-      "svar": [{"verdi": "JA"}],
+      "svar": [
+        {
+          "verdi": "JA"
+        }
+      ],
       "undersporsmal": []
     },
     {
@@ -334,7 +372,11 @@
       "max": null,
       "pavirkerAndreSporsmal": false,
       "kriterieForVisningAvUndersporsmal": null,
-      "svar": [{"verdi": "JA"}],
+      "svar": [
+        {
+          "verdi": "JA"
+        }
+      ],
       "undersporsmal": []
     },
     {
@@ -347,7 +389,11 @@
       "max": null,
       "pavirkerAndreSporsmal": false,
       "kriterieForVisningAvUndersporsmal": "JA",
-      "svar": [{"verdi": "JA"}],
+      "svar": [
+        {
+          "verdi": "JA"
+        }
+      ],
       "undersporsmal": [
         {
           "id": "25",
@@ -359,10 +405,31 @@
           "max": "2019-08-17",
           "pavirkerAndreSporsmal": false,
           "kriterieForVisningAvUndersporsmal": null,
-          "svar": [{"verdi": "{\"fom\": \"2019-08-09\", \"tom\": \"2019-08-10\"}"}],
+          "svar": [
+            {
+              "verdi": "{\"fom\": \"2019-08-09\", \"tom\": \"2019-08-10\"}"
+            }
+          ],
           "undersporsmal": []
         }
       ]
+    },
+    {
+      "id": "27",
+      "tag": "BEKREFT_OPPLYSNINGER",
+      "sporsmalstekst": "Jeg har lest all informasjonen jeg har fått i søknaden og bekrefter at opplysningene jeg har gitt er korrekte.",
+      "undertekst": null,
+      "svartype": "CHECKBOX_PANEL",
+      "min": null,
+      "max": null,
+      "pavirkerAndreSporsmal": false,
+      "kriterieForVisningAvUndersporsmal": null,
+      "svar": [
+        {
+          "verdi": "CHECKED"
+        }
+      ],
+      "undersporsmal": []
     },
     {
       "id": "26",
@@ -375,19 +442,6 @@
       "pavirkerAndreSporsmal": false,
       "kriterieForVisningAvUndersporsmal": null,
       "svar": [],
-      "undersporsmal": []
-    },
-    {
-      "id": "27",
-      "tag": "BEKREFT_OPPLYSNINGER",
-      "sporsmalstekst": "Jeg har lest all informasjonen jeg har fått i søknaden og bekrefter at opplysningene jeg har gitt er korrekte.",
-      "undertekst": null,
-      "svartype": "CHECKBOX_PANEL",
-      "min": null,
-      "max": null,
-      "pavirkerAndreSporsmal": false,
-      "kriterieForVisningAvUndersporsmal": null,
-      "svar": [{"verdi": "CHECKED"}],
       "undersporsmal": []
     }
   ]
