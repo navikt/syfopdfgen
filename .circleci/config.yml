@@ -12,6 +12,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
+      - barkendeploy/init
       - barkendeploy/docker-build
       - barkendeploy/docker-login
       - barkendeploy/docker-push
