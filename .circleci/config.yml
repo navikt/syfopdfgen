@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 orbs:
   barkendeploy: navikt/barkendeploy@dev:master
 parameters:
@@ -8,7 +8,7 @@ parameters:
 jobs:
   build:
     docker:
-      - image: "navikt/deployment-cli:v0.1.4"
+      - image: "navikt/deployment-cli:v0.3.0"
     steps:
       - checkout
       - setup_remote_docker
