@@ -27,6 +27,7 @@ workflows:
               only: master
       - barkendeploy/deployment:
           deployments:
+            - checkout
             - barkendeploy/deploy-apply:
                 cluster: dev-fss
             - barkendeploy/deploy-apply:
@@ -44,6 +45,7 @@ workflows:
               ignore: master
       - barkendeploy/deployment:
           deployments:
+            - checkout
             - barkendeploy/deploy-apply:
                 cluster: dev-fss
           context: barkendeploy
