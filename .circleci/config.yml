@@ -27,9 +27,9 @@ workflows:
               only: master
       - barkendeploy/deployment:
           deployments:
-            - barkendeploy/deploy-create:
+            - barkendeploy/deploy-apply:
                 cluster: dev-fss
-            - barkendeploy/deploy-create:
+            - barkendeploy/deploy-apply:
                 cluster: prod-fss
           context: barkendeploy
           requires:
@@ -44,7 +44,7 @@ workflows:
               ignore: master
       - barkendeploy/deployment:
           deployments:
-            - barkendeploy/deploy-create:
+            - barkendeploy/deploy-apply:
                 cluster: dev-fss
           context: barkendeploy
           requires:
