@@ -1,51 +1,51 @@
 version: 2
+orbs:
+  barkendeploy: navikt/barkendeploy@dev:master
+parameters:
+  deploy_branch:
+    type: boolean
+    default: false
 jobs:
-  deploy:
+  build:
     docker:
       - image: "navikt/deployment-cli:v0.1.4"
     steps:
       - checkout
       - setup_remote_docker
-      - run:
-          name: Build docker image
-          command: docker build -t navikt/syfopdfgen:${CIRCLE_SHA1} .
-      - run:
-          name: Release docker image
-          command: |
-            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-            docker push navikt/syfopdfgen:${CIRCLE_SHA1}
-      - run: # Username and password is set through $DEPLOYMENT_USERNAME and $DEPLOYMENT_PASSWORD
-          name: Create deployment request for development
-          command: deployment-cli deploy create --cluster=dev-fss --repository=navikt/syfopdfgen --team=teamsykefravr -r=naiserator.yaml --version=${CIRCLE_SHA1}
-      - run: # Username and password is set through $DEPLOYMENT_USERNAME and $DEPLOYMENT_PASSWORD
-          name: Create deployment request for prod
-          command: deployment-cli deploy create --cluster=prod-fss --repository=navikt/syfopdfgen --team=teamsykefravr -r=naiserator.yaml --version=${CIRCLE_SHA1}
-  devdeploy:
-    docker:
-      - image: "navikt/deployment-cli:v0.1.4"
-    steps:
-      - checkout
-      - setup_remote_docker
-      - run:
-          name: Build docker image
-          command: docker build -t navikt/syfopdfgen:${CIRCLE_SHA1} .
-      - run:
-          name: Release docker image
-          command: |
-            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-            docker push navikt/syfopdfgen:${CIRCLE_SHA1}
-      - run: # Username and password is set through $DEPLOYMENT_USERNAME and $DEPLOYMENT_PASSWORD
-          name: Create deployment request for development
-          command: deployment-cli deploy create --cluster=dev-fss --repository=navikt/syfopdfgen --team=teamsykefravr -r=naiserator.yaml --version=${CIRCLE_SHA1}
+      - barkendeploy/docker-build
+      - barkendeploy/docker-login
+      - barkendeploy/docker-push
 workflows:
   version: 2
-  build_and_deploy:
+  build_and_release:
     jobs:
-      - deploy:
+      - build:
+          context: barkendeploy
           filters:
             branches:
               only: master
-      - devdeploy:
+      - barkendeploy/deployment:
+          deployments:
+            - barkendeploy/deploy-create:
+                cluster: dev-fss
+            - barkendeploy/deploy-create:
+                cluster: prod-fss
+          context: barkendeploy
+          requires:
+            - build
+  build_branch:
+    when: << pipeline.parameters.deploy_branch >>
+    jobs:
+      - build:
+          context: barkendeploy
           filters:
             branches:
               ignore: master
+      - barkendeploy/deployment:
+          deployments:
+            - barkendeploy/deploy-create:
+                cluster: dev-fss
+          context: barkendeploy
+          requires:
+            - build
+
