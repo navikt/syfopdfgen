@@ -1,0 +1,12 @@
+name: Webhook test
+on: repository_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: On syfodeploy display branch
+      if: github.event.action == 'syfodeploy'
+      run: |
+        echo "Hello, this is ${{ github.event.branch }}"
