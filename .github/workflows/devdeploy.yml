@@ -3,11 +3,6 @@ on:
   push:
     branches:
       - '!master'
-    paths:
-      - '!.circleci/*'
-      - '!README.md'
-      - '!CODEOWNERS'
-      - '!LICENSE'
 jobs:
   build-push-deploy:
     name: Checkout code and create docker tag
