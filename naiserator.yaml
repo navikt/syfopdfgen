@@ -6,7 +6,7 @@ metadata:
   labels:
     team: {{team}}
 spec:
-  image: "docker.pkg.github.com/navikt/syfopdfgen:{{version}}"
+  image: "docker.pkg.github.com/navikt/syfopdfgen:{{tag}}"
   port: 8080
   replicas:
     min: 1
