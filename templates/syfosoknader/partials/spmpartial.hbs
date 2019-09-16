@@ -191,6 +191,11 @@
                 {{ this.sporsmalstekst }}
             </h3>
         {{/if}}
+        {{#if this.undertekst}}
+            <p class="undertekst">
+                {{ this.undertekst }}
+            </p>
+        {{/if }}
         <div class="oppsummering__avkrysset">
             <img class="checkbox" src="{{ image "Checkboks.png" }}"/>
             <span class="svar svar--checkbox">
