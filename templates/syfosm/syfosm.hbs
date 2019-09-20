@@ -668,16 +668,24 @@
     <thead>
     <tr>
         <td class="tr10"><h4>13</h4></td>
-        <td class="tr60"><h4>Begrunnelse for avvising</h4></td>
-        <td></td>
+        <td class="tr20"><h4>Begrunnesle for avvising</h4></td>
+        <td>Begrunnesle til sykmeldt</td>
+        <td>Begrunnesle til sykmelder</td>
     </tr>
     </thead>
     <tr>
+        <td colspan="0"></td>
         <td colspan="0"></td>
         <td>
             <ul>{{#each validationResult.ruleHits}}
                 <li>{{messageForUser}}</li>
                 {{/each}}
+            </ul>
+        </td>
+        <td>
+            <ul>{{#each validationResult.ruleHits}}
+                <li>{{messageForSender}}</li>
+            {{/each}}
             </ul>
         </td>
     </tr>
