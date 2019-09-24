@@ -101,6 +101,10 @@
         <td class="tr75">{{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}SYKMELDING</td>
         <td>NAVs eksemplar</td>
     </tr>
+    <tr>
+        <td>MottatDato NAV: {{ iso_to_nor_date mottattDato }}</td>
+        <td>BehandletDato: {{ iso_to_nor_date sykmelding.behandletTidspunkt }}</td>
+    </tr>
     </thead>
 </table>
 
