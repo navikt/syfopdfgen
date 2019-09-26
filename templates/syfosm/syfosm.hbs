@@ -682,13 +682,17 @@
         <td colspan="0"></td>
         <td>
             <ul>{{#each validationResult.ruleHits}}
+                {{#eq ruleStatus "INVALID" }}
                 <li>{{messageForUser}}</li>
-                {{/each}}
+                {{/eq}}
+            {{/each}}
             </ul>
         </td>
         <td>
             <ul>{{#each validationResult.ruleHits}}
+                {{#eq ruleStatus "INVALID" }}
                 <li>{{messageForSender}}</li>
+                {{/eq}}
             {{/each}}
             </ul>
         </td>
