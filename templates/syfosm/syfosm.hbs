@@ -102,8 +102,8 @@
         <td>NAVs eksemplar</td>
     </tr>
     <tr>
-        <td>MottatDato NAV: {{ iso_to_nor_date mottattDato }}</td>
-        <td>BehandletDato: {{ iso_to_nor_date sykmelding.behandletTidspunkt }}</td>
+        <td>mottattdato NAV: {{ iso_to_nor_date mottattDato }}</td>
+        <td>behandletDato: {{ iso_to_nor_date sykmelding.behandletTidspunkt }}</td>
     </tr>
     </thead>
 </table>
@@ -672,9 +672,9 @@
     <thead>
     <tr>
         <td class="tr10"><h4>13</h4></td>
-        <td class="tr20"><h4>Begrunnesle for avvising</h4></td>
-        <td>Begrunnesle til sykmeldt</td>
-        <td>Begrunnesle til sykmelder</td>
+        <td class="tr20"><h4>begrunnelse for avvising</h4></td>
+        <td>begrunnelse til sykmeldt</td>
+        <td>begrunnelse til sykmelder</td>
     </tr>
     </thead>
     <tr>
@@ -704,7 +704,7 @@
 <table class="footer">
     <thead>
     <tr>
-        <td>Sporringsinformasjon om sykmeldingen teknisk, sykmeldingsid: {{ sykmelding.id }} </td>
+        <td>sporingsinformasjon om sykmeldingen teknisk, sykmeldingsid: {{ sykmelding.id }} </td>
     </tr>
     </thead>
 </table>
