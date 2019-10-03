@@ -313,10 +313,10 @@
     <tr>
         <td class="tr10">4</td>
         <td class="tr30">Mulighet for arbeid</td>
-        <td class="tr15"></td>
-        <td class="tr15"></td>
-        <td class="tr15"></td>
-        <td class="tr15"></td>
+        <td class="tr13"></td>
+        <td class="tr13"></td>
+        <td class="tr13"></td>
+        <td class="tr13"></td>
     </tr>
     </thead>
     <tbody>
@@ -393,6 +393,21 @@
                         <td><h4>Medisinske årsaker hindrer arbeidsrelatert aktivitet</h4></td>
                         <td colspan="3"></td>
                     </tr>
+                    {{#if aktivitetIkkeMulig.medisinskArsak.arsak }}
+                    <tr>
+                        <td><h4>4.3.3.1</h4></td>
+                        <td><h4>Angi hva som er årsaken</h4></td>
+                        <td>{{#each aktivitetIkkeMulig.medisinskArsak.arsak}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </td>
+                    </tr>
+                    {{/if}}
+                    <tr>
+                        <td><h4>4.3.3.2</h4></td>
+                        <td><h4>Beskriv nærmere</h4></td>
+                        <td>{{ aktivitetIkkeMulig.medisinskArsak.beskrivelse}}</td>
+                    </tr>
                 {{/if}}
                 {{#if aktivitetIkkeMulig.arbeidsrelatertArsak }}
                     <tr>
@@ -400,6 +415,25 @@
                         <td><h4>Forhold på arbeidsplassen hindrer arbeidsrelatert aktivitet</h4></td>
                         <td colspan="3"></td>
                     </tr>
+
+                    {{#if aktivitetIkkeMulig.arbeidsrelatertArsak.arsak }}
+                    <tr>
+                        <td><h4>4.3.4.1 </h4></td>
+                        <td><h4>Angi hva som er årsaken</h4></td>
+                        <td>{{#each aktivitetIkkeMulig.arbeidsrelatertArsak.arsak}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                        </td>
+                    <tr>
+                    {{/if}}
+
+                    {{#if aktivitetIkkeMulig.arbeidsrelatertArsak.beskrivelse }}
+                        <tr>
+                            <td><h4>4.3.4.2 </h4></td>
+                            <td><h4>Beskriv nærmere</h4></td>
+                            <td>{{aktivitetIkkeMulig.arbeidsrelatertArsak.beskrivelse}}</td>
+                        <tr>
+                    {{/if}}
                 {{/if}}
             {{/if}}
         {{/each}}
