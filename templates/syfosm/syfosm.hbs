@@ -478,6 +478,41 @@
     {{/contains_field}}
     </tbody>
 </table>
+
+{{#if sykmelding.prognose}}
+    <table>
+        <thead>
+        <tr>
+            <td class="tr10"><h4>5</h4></td>
+            <td class="tr60"><h4>Friskmelding/Prognose</h4></td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        {{#if sykmelding.prognose.arbeidsforEtterPeriode}}
+            <tr>
+                <td><h4>5.1</h4></td>
+                <td><h4>Pasienten er 100 prosent arbeidsfør etter denne perioden</h4></td>
+                <td>{{ sykmelding.prognose.arbeidsforEtterPeriode }}</td>
+            </tr>
+        {{/if}}
+        {{#if sykmelding.prognose.hensynArbeidsplassen }}
+            <tr>
+                <td><h4>5.1.1</h4></td>
+                <td><h4>Beskriv eventuelle hensyn som må tas på arbeidsplassen</h4></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    {{ sykmelding.prognose.hensynArbeidsplassen }}
+                </td>
+            </tr>
+        {{/if}}
+        </tbody>
+    </table>
+{{/if}}
+
 <!-- TODO: this shows when sykmelding.utdypendeOpplysninger returns a empty map it should not -->
 {{#if sykmelding.utdypendeOpplysninger}}
     <table>
