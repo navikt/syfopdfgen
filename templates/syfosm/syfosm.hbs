@@ -486,7 +486,6 @@
             <td class="tr10"><h4>5</h4></td>
             <td class="tr60"><h4>Friskmelding/Prognose</h4></td>
             <td></td>
-            
         </tr>
         </thead>
         <tbody>
@@ -500,14 +499,12 @@
                         Nei
                     {{/if}}
             </td>
-            
         </tr>
         {{#if sykmelding.prognose.hensynArbeidsplassen }}
             <tr>
                 <td><h4>5.1.1</h4></td>
                 <td><h4>Beskriv eventuelle hensyn som må tas på arbeidsplassen</h4></td>
-                
-                
+
             </tr>
             <tr>
                 <td></td>
@@ -521,7 +518,6 @@
                 <td><h4>5.2</h4></td>
                 <td><h4>Pasient med arbeidsgiver: Utdypende opplysninger ved 7 uker</h4></td>
                 <td></td>
-                
             </tr>
             <tr>
                 <td><h4>5.2.1</h4></td>
@@ -532,14 +528,13 @@
                       {{else}}
                           Nei
                       {{/if}}
-                </td>
-                
+                </td> 
             </tr>
             {{#if sykmelding.prognose.erIArbeid.arbeidFOM }}
                 <tr>
                     <td></td>
                     <td>Anslå når du tror dette kan skje</td>
-                    <td>{{ sykmelding.prognose.erIArbeid.arbeidFOM }}</td>
+                    <td>{{ iso_to_date sykmelding.prognose.erIArbeid.arbeidFOM }}</td>
                 </tr>
             {{/if}}
             <tr>
@@ -557,7 +552,7 @@
             <tr>
                 <td><h4>5.2.3</h4></td>
                 <td><h4>Hvis usikker: Når antar du å kunne gi tilbakemelding på dette?</h4></td>
-                <td>{{ sykmelding.prognose.erIArbeid.vurderingsdato }}</td>
+                <td>{{ iso_to_date sykmelding.prognose.erIArbeid.vurderingsdato }}</td>
             </tr>
             {{/if}}
         {{/if}}
@@ -582,14 +577,14 @@
             <tr>
                 <td></td>
                 <td>Anslå når du tror dette kan skje</td>
-                <td>{{ sykmelding.prognose.erIkkeIArbeid.arbeidsforFOM }}</td>
+                <td>{{ iso_to_date sykmelding.prognose.erIkkeIArbeid.arbeidsforFOM }}</td>
             </tr>
             {{/if}}
             {{#if sykmelding.prognose.erIkkeIArbeid.vurderingsdato }}
             <tr>
                 <td><h4>5.3.2</h4></td>
                 <td><h4>Hvis usikker: Når antar du å kunne gi tilbakemelding på dette?</h4></td>
-                <td>{{ sykmelding.prognose.erIkkeIArbeid.vurderingsdato }}</td>
+                <td>{{ iso_to_date sykmelding.prognose.erIkkeIArbeid.vurderingsdato }}</td>
             </tr>
             {{/if}}
         {{/if}}        
