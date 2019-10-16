@@ -165,12 +165,16 @@
       "arbeidsforEtterPeriode": true,
       "hensynArbeidsplassen": "word word word word word word word word word word word word word word word word word word word word word word word word word word word word word",
       "erIArbeid": {
-        "egetArbeidPaSikt": false,
+        "egetArbeidPaSikt": true,
         "annetArbeidPaSikt": true,
         "arbeidFOM": "2018-11-21",
         "vurderingsdato": "2018-10-30"
       },
-      "erIkkeIArbeid": null
+      "erIkkeIArbeid": {
+        "arbeidsforFOM": "2018-10-30",
+        "arbeidsforPaSikt": true,
+        "vurderingsdato": "2018-10-30"
+      }
     },
     "utdypendeOpplysninger": {
       "6.3": {

@@ -478,6 +478,121 @@
     {{/contains_field}}
     </tbody>
 </table>
+
+{{#if sykmelding.prognose}}
+    <table>
+        <thead>
+        <tr>
+            <td class="tr10"><h4>5</h4></td>
+            <td class="tr60"><h4>Friskmelding/Prognose</h4></td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><h4>5.1</h4></td>
+            <td><h4>Pasienten er 100 prosent arbeidsfør etter denne perioden</h4></td>
+            <td>
+                    {{#if sykmelding.prognose.arbeidsforEtterPeriode}}
+                        Ja
+                    {{else}}
+                        Nei
+                    {{/if}}
+            </td>
+        </tr>
+        {{#if sykmelding.prognose.hensynArbeidsplassen }}
+            <tr>
+                <td><h4>5.1.1</h4></td>
+                <td><h4>Beskriv eventuelle hensyn som må tas på arbeidsplassen</h4></td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    {{ sykmelding.prognose.hensynArbeidsplassen }}
+                </td>
+            </tr>
+        {{/if}}
+        {{#if sykmelding.prognose.erIArbeid}}
+            <tr>
+                <td><h4>5.2</h4></td>
+                <td><h4>Pasient med arbeidsgiver: Utdypende opplysninger ved 7 uker</h4></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><h4>5.2.1</h4></td>
+                <td><h4>Jeg antar at pasienten på sikt kan komme tilbake til samme arbeidsgiver</h4></td>
+                <td>
+                      {{#if sykmelding.prognose.erIArbeid.egetArbeidPaSikt }}
+                         Ja
+                      {{else}}
+                          Nei
+                      {{/if}}
+                </td> 
+            </tr>
+            {{#if sykmelding.prognose.erIArbeid.arbeidFOM }}
+                <tr>
+                    <td></td>
+                    <td>Anslå når du tror dette kan skje</td>
+                    <td>{{ iso_to_date sykmelding.prognose.erIArbeid.arbeidFOM }}</td>
+                </tr>
+            {{/if}}
+            <tr>
+                <td><h4>5.2.2</h4></td>
+                <td><h4>Jeg antar at pasienten på sikt kan komme i arbeid hos annen arbeidsgiver</h4></td>
+                <td colspan="2">
+                    {{#if sykmelding.prognose.erIArbeid.annetArbeidPaSikt }}
+                         Ja
+                      {{else}}
+                          Nei
+                      {{/if}}
+                </td>
+            </tr>
+            {{#if sykmelding.prognose.erIArbeid.vurderingsdato }}
+            <tr>
+                <td><h4>5.2.3</h4></td>
+                <td><h4>Hvis usikker: Når antar du å kunne gi tilbakemelding på dette?</h4></td>
+                <td>{{ iso_to_date sykmelding.prognose.erIArbeid.vurderingsdato }}</td>
+            </tr>
+            {{/if}}
+        {{/if}}
+        {{#if sykmelding.prognose.erIkkeIArbeid }}
+            <tr>
+                <td><h4>5.3</h4></td>
+                <td><h4>Pasient uten arbeidsgiver: Utdypende opplysninger ved 7 uker</h4></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><h4>5.3.1</h4></td>
+                <td><h4>Jeg antar at pasienten på sikt kan komme tilbake i arbeid</h4></td>
+                <td colspan="2">
+                    {{#if sykmelding.prognose.erIkkeIArbeid.arbeidsforPaSikt }}
+                         Ja
+                      {{else}}
+                          Nei
+                      {{/if}}
+                </td>
+            </tr>
+            {{#if sykmelding.prognose.erIkkeIArbeid.arbeidsforPaSikt }}
+            <tr>
+                <td></td>
+                <td>Anslå når du tror dette kan skje</td>
+                <td>{{ iso_to_date sykmelding.prognose.erIkkeIArbeid.arbeidsforFOM }}</td>
+            </tr>
+            {{/if}}
+            {{#if sykmelding.prognose.erIkkeIArbeid.vurderingsdato }}
+            <tr>
+                <td><h4>5.3.2</h4></td>
+                <td><h4>Hvis usikker: Når antar du å kunne gi tilbakemelding på dette?</h4></td>
+                <td>{{ iso_to_date sykmelding.prognose.erIkkeIArbeid.vurderingsdato }}</td>
+            </tr>
+            {{/if}}
+        {{/if}}        
+        
+        </tbody>
+    </table>
+{{/if}}
+
 <!-- TODO: this shows when sykmelding.utdypendeOpplysninger returns a empty map it should not -->
 {{#if sykmelding.utdypendeOpplysninger}}
     <table>
