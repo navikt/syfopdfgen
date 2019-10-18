@@ -314,9 +314,9 @@
         <td class="tr10">4</td>
         <td class="tr30">Mulighet for arbeid</td>
         <td class="tr13"></td>
-        <td class="tr13"></td>
-        <td class="tr13"></td>
-        <td class="tr13"></td>
+        <td class="tr10"></td>
+        <td class="tr10"></td>
+        <td class="tr10"></td>
     </tr>
     </thead>
     <tbody>
@@ -403,11 +403,13 @@
                         </td>
                     </tr>
                     {{/if}}
+                    {{#if aktivitetIkkeMulig.medisinskArsak.beskrivelse }}
                     <tr>
                         <td><h4>4.3.3.2</h4></td>
                         <td><h4>Beskriv nærmere</h4></td>
                         <td>{{ aktivitetIkkeMulig.medisinskArsak.beskrivelse}}</td>
                     </tr>
+                    {{/if}}
                 {{/if}}
                 {{#if aktivitetIkkeMulig.arbeidsrelatertArsak }}
                     <tr>
