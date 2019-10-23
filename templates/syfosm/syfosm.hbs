@@ -101,6 +101,10 @@
         <td class="tr75">{{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}SYKMELDING</td>
         <td>NAVs eksemplar</td>
     </tr>
+    <tr>
+        <td>mottattdato NAV: {{ mottattDato }}</td>
+        <td>behandletDato: {{ iso_to_nor_date sykmelding.behandletTidspunkt }}</td>
+    </tr>
     </thead>
 </table>
 
@@ -309,10 +313,10 @@
     <tr>
         <td class="tr10">4</td>
         <td class="tr30">Mulighet for arbeid</td>
-        <td class="tr15"></td>
-        <td class="tr15"></td>
-        <td class="tr15"></td>
-        <td class="tr15"></td>
+        <td class="tr13"></td>
+        <td class="tr10"></td>
+        <td class="tr10"></td>
+        <td class="tr10"></td>
     </tr>
     </thead>
     <tbody>
@@ -346,7 +350,7 @@
             <td><h4>Pasienten kan være delvis i arbeid</h4></td>
             <td><h5>4.2.1 f.o.m.</h5></td>
             <td><h5>4.2.2 t.o.m.</h5></td>
-            <td><h5>4.2.3 grad</h5></td>
+            <td><h5>4.2.3 grad for sykmelding</h5></td>
             <td><h5>4.2.3 reisetilskudd</h5></td>
         </tr>
         {{#each sykmelding.perioder }}
@@ -389,6 +393,23 @@
                         <td><h4>Medisinske årsaker hindrer arbeidsrelatert aktivitet</h4></td>
                         <td colspan="3"></td>
                     </tr>
+                    {{#if aktivitetIkkeMulig.medisinskArsak.arsak }}
+                    <tr>
+                        <td><h4>4.3.3.1</h4></td>
+                        <td><h4>Angi hva som er årsaken</h4></td>
+                        <td>{{#each aktivitetIkkeMulig.medisinskArsak.arsak}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </td>
+                    </tr>
+                    {{/if}}
+                    {{#if aktivitetIkkeMulig.medisinskArsak.beskrivelse }}
+                    <tr>
+                        <td><h4>4.3.3.2</h4></td>
+                        <td><h4>Beskriv nærmere</h4></td>
+                        <td>{{ aktivitetIkkeMulig.medisinskArsak.beskrivelse}}</td>
+                    </tr>
+                    {{/if}}
                 {{/if}}
                 {{#if aktivitetIkkeMulig.arbeidsrelatertArsak }}
                     <tr>
@@ -396,6 +417,25 @@
                         <td><h4>Forhold på arbeidsplassen hindrer arbeidsrelatert aktivitet</h4></td>
                         <td colspan="3"></td>
                     </tr>
+
+                    {{#if aktivitetIkkeMulig.arbeidsrelatertArsak.arsak }}
+                    <tr>
+                        <td><h4>4.3.4.1 </h4></td>
+                        <td><h4>Angi hva som er årsaken</h4></td>
+                        <td>{{#each aktivitetIkkeMulig.arbeidsrelatertArsak.arsak}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                        </td>
+                    <tr>
+                    {{/if}}
+
+                    {{#if aktivitetIkkeMulig.arbeidsrelatertArsak.beskrivelse }}
+                        <tr>
+                            <td><h4>4.3.4.2 </h4></td>
+                            <td><h4>Beskriv nærmere</h4></td>
+                            <td>{{aktivitetIkkeMulig.arbeidsrelatertArsak.beskrivelse}}</td>
+                        <tr>
+                    {{/if}}
                 {{/if}}
             {{/if}}
         {{/each}}
@@ -440,6 +480,121 @@
     {{/contains_field}}
     </tbody>
 </table>
+
+{{#if sykmelding.prognose}}
+    <table>
+        <thead>
+        <tr>
+            <td class="tr10"><h4>5</h4></td>
+            <td class="tr60"><h4>Friskmelding/Prognose</h4></td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><h4>5.1</h4></td>
+            <td><h4>Pasienten er 100 prosent arbeidsfør etter denne perioden</h4></td>
+            <td>
+                    {{#if sykmelding.prognose.arbeidsforEtterPeriode}}
+                        Ja
+                    {{else}}
+                        Nei
+                    {{/if}}
+            </td>
+        </tr>
+        {{#if sykmelding.prognose.hensynArbeidsplassen }}
+            <tr>
+                <td><h4>5.1.1</h4></td>
+                <td><h4>Beskriv eventuelle hensyn som må tas på arbeidsplassen</h4></td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    {{ sykmelding.prognose.hensynArbeidsplassen }}
+                </td>
+            </tr>
+        {{/if}}
+        {{#if sykmelding.prognose.erIArbeid}}
+            <tr>
+                <td><h4>5.2</h4></td>
+                <td><h4>Pasient med arbeidsgiver: Utdypende opplysninger ved 7 uker</h4></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><h4>5.2.1</h4></td>
+                <td><h4>Jeg antar at pasienten på sikt kan komme tilbake til samme arbeidsgiver</h4></td>
+                <td>
+                      {{#if sykmelding.prognose.erIArbeid.egetArbeidPaSikt }}
+                         Ja
+                      {{else}}
+                          Nei
+                      {{/if}}
+                </td> 
+            </tr>
+            {{#if sykmelding.prognose.erIArbeid.arbeidFOM }}
+                <tr>
+                    <td></td>
+                    <td>Anslå når du tror dette kan skje</td>
+                    <td>{{ iso_to_date sykmelding.prognose.erIArbeid.arbeidFOM }}</td>
+                </tr>
+            {{/if}}
+            <tr>
+                <td><h4>5.2.2</h4></td>
+                <td><h4>Jeg antar at pasienten på sikt kan komme i arbeid hos annen arbeidsgiver</h4></td>
+                <td colspan="2">
+                    {{#if sykmelding.prognose.erIArbeid.annetArbeidPaSikt }}
+                         Ja
+                      {{else}}
+                          Nei
+                      {{/if}}
+                </td>
+            </tr>
+            {{#if sykmelding.prognose.erIArbeid.vurderingsdato }}
+            <tr>
+                <td><h4>5.2.3</h4></td>
+                <td><h4>Hvis usikker: Når antar du å kunne gi tilbakemelding på dette?</h4></td>
+                <td>{{ iso_to_date sykmelding.prognose.erIArbeid.vurderingsdato }}</td>
+            </tr>
+            {{/if}}
+        {{/if}}
+        {{#if sykmelding.prognose.erIkkeIArbeid }}
+            <tr>
+                <td><h4>5.3</h4></td>
+                <td><h4>Pasient uten arbeidsgiver: Utdypende opplysninger ved 7 uker</h4></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><h4>5.3.1</h4></td>
+                <td><h4>Jeg antar at pasienten på sikt kan komme tilbake i arbeid</h4></td>
+                <td colspan="2">
+                    {{#if sykmelding.prognose.erIkkeIArbeid.arbeidsforPaSikt }}
+                         Ja
+                      {{else}}
+                          Nei
+                      {{/if}}
+                </td>
+            </tr>
+            {{#if sykmelding.prognose.erIkkeIArbeid.arbeidsforPaSikt }}
+            <tr>
+                <td></td>
+                <td>Anslå når du tror dette kan skje</td>
+                <td>{{ iso_to_date sykmelding.prognose.erIkkeIArbeid.arbeidsforFOM }}</td>
+            </tr>
+            {{/if}}
+            {{#if sykmelding.prognose.erIkkeIArbeid.vurderingsdato }}
+            <tr>
+                <td><h4>5.3.2</h4></td>
+                <td><h4>Hvis usikker: Når antar du å kunne gi tilbakemelding på dette?</h4></td>
+                <td>{{ iso_to_date sykmelding.prognose.erIkkeIArbeid.vurderingsdato }}</td>
+            </tr>
+            {{/if}}
+        {{/if}}        
+        
+        </tbody>
+    </table>
+{{/if}}
+
 <!-- TODO: this shows when sykmelding.utdypendeOpplysninger returns a empty map it should not -->
 {{#if sykmelding.utdypendeOpplysninger}}
     <table>
@@ -570,7 +725,7 @@
     </table>
 {{/if}}
 
-{{#if sykmelding.kontaktMedPasient.begrunnelseIkkeKontakt }}
+{{#if sykmelding.kontaktMedPasient}}
     <table>
         <thead>
         <tr>
@@ -580,11 +735,14 @@
         </tr>
         </thead>
         <tbody>
+        {{#if sykmelding.kontaktMedPasient.kontaktDato}}
         <tr>
             <td><h4>11.1</h4></td>
             <td><h4>Dato for dokumenterbar kontakt med pasienten:</h4></td>
             <td>{{ sykmelding.kontaktMedPasient.kontaktDato }}</td>
         </tr>
+        {{/if}}
+        {{#if sykmelding.kontaktMedPasient.begrunnelseIkkeKontakt }}
         <tr>
             <td><h4>11.2</h4></td>
             <td><h4>Begrunnelse for tilbakedatering:</h4></td>
@@ -596,6 +754,7 @@
                 {{ sykmelding.kontaktMedPasient.begrunnelseIkkeKontakt }}
             </td>
         </tr>
+        {{/if}}
         </tbody>
     </table>
 {{/if}}
@@ -612,7 +771,7 @@
     <tr>
         <td><h4>12.1</h4></td>
         <td><h4>Pasienten er kjent eller har vist legitimasjon</h4></td>
-        <td>{{iso_to_nor_date sykmelding.signaturDato }}</td>
+        <td>{{iso_to_nor_date sykmelding.behandletTidspunkt }}</td>
     </tr>
     <tr>
         <td><h4>12.2</h4></td>
@@ -648,22 +807,42 @@
     <thead>
     <tr>
         <td class="tr10"><h4>13</h4></td>
-        <td class="tr60"><h4>Begrunnelse for avvising</h4></td>
-        <td></td>
+        <td class="tr20"><h4>begrunnelse for avvising</h4></td>
+        <td>begrunnelse til sykmeldt</td>
+        <td>begrunnelse til sykmelder</td>
     </tr>
     </thead>
     <tr>
         <td colspan="0"></td>
+        <td colspan="0"></td>
         <td>
             <ul>{{#each validationResult.ruleHits}}
+                {{#eq ruleStatus "INVALID" }}
                 <li>{{messageForUser}}</li>
-                {{/each}}
+                {{/eq}}
+            {{/each}}
+            </ul>
+        </td>
+        <td>
+            <ul>{{#each validationResult.ruleHits}}
+                {{#eq ruleStatus "INVALID" }}
+                <li>{{messageForSender}}</li>
+                {{/eq}}
+            {{/each}}
             </ul>
         </td>
     </tr>
     </tbody>
 </table>
 {{/eq}}
+
+<table class="footer">
+    <thead>
+    <tr>
+        <td>sporingsinformasjon om sykmeldingen teknisk, sykmeldingsid: {{ sykmelding.id }} </td>
+    </tr>
+    </thead>
+</table>
 
 </body>
 </html>

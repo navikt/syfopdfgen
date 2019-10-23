@@ -1,3 +1,4 @@
+[![Build status](https://github.com/navikt/syfopdfgen/workflows/Deploy%20to%20dev%20and%20prod/badge.svg)](https://github.com/navikt/syfopdfgen/workflows/Deploy%20to%20dev%20and%20prod/badge.svg)
 # PdfGen
 Repository for digisyfo pdfgen templates.
 

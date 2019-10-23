@@ -165,12 +165,16 @@
       "arbeidsforEtterPeriode": true,
       "hensynArbeidsplassen": "word word word word word word word word word word word word word word word word word word word word word word word word word word word word word",
       "erIArbeid": {
-        "egetArbeidPaSikt": false,
+        "egetArbeidPaSikt": true,
         "annetArbeidPaSikt": true,
         "arbeidFOM": "2018-11-21",
         "vurderingsdato": "2018-10-30"
       },
-      "erIkkeIArbeid": null
+      "erIkkeIArbeid": {
+        "arbeidsforFOM": "2018-10-30",
+        "arbeidsforPaSikt": true,
+        "vurderingsdato": "2018-10-30"
+      }
     },
     "utdypendeOpplysninger": {
       "6.3": {
@@ -234,13 +238,16 @@
       {
         "ruleName": "BEHANDLER_KI_NOT_USING_VALID_DIAGNOSECODE_TYPE",
         "messageForSender": "Behandler er manuellterapeut/kiropraktor eller fysioterapeut med autorisasjon har angitt annen diagnose enn kapitel L (muskel og skjelettsykdommer)",
-        "messageForUser": "Den som skrev sykmeldingen mangler autorisasjon."
+        "messageForUser": "Den som skrev sykmeldingen mangler autorisasjon.",
+        "ruleStatus": "INVALID"
       },
       {
         "ruleName": "NUMBER_OF_TREATMENT_DAYS_SET",
         "messageForSender": "Hvis behandlingsdager er angitt sendes meldingen til manuell behandling.",
-        "messageForUser": "Hvis behandlingsdager er angitt sendes meldingen til manuell behandling."
+        "messageForUser": "Hvis behandlingsdager er angitt sendes meldingen til manuell behandling.",
+        "ruleStatus": "MANUAL_PROCESSING"
       }
     ]
-  }
+  },
+  "mottattDato": "2018-10-14T14:52:35"
 }
