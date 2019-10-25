@@ -799,6 +799,19 @@
             {{ sykmelding.behandler.adresse.gate }}, {{ sykmelding.behandler.adresse.postnummer }} {{ sykmelding.behandler.adresse.kommune }}
         </td>
     </tr>
+    <tr>
+        <td><h4></h4></td>
+        <td><h4>Organiasjons navn</h4></td>
+        <td>{{ behandlerKontorOrgName }}</td>
+    </tr>
+    <tr>
+        <td><h4></h4></td>
+        <td><h4>Avsender system informasjon</h4></td>
+        <td>
+            Navn: {{ sykmelding.avsenderSystem.navn }}
+            Versjon: {{ sykmelding.avsenderSystem.versjon }}
+        </td>
+    </tr>
     </tbody>
 </table>
 

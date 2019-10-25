@@ -1,7 +1,6 @@
 #!/bin/bash
 
-CURRENT_PATH="$(dirname $0)"
-CURRENT_PATH="$(realpath $CURRENT_PATH)"
+CURRENT_PATH="$(cd "$(dirname "$1")"; pwd)/$(basename "$1")"
 
 docker pull navikt/pdfgen
 docker run \

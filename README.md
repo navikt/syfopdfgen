@@ -30,6 +30,7 @@ a PDF to your browser. Additionally, the template folder will be fetched on ever
 since the last GET, making this ideal for developing new templates for your application.
 
 The template and data directory structure both follow the `<application>/<template>` structure.
+Example url: `http://0.0.0.0:8080/api/v1/genpdf/syfosm/syfosm`
 
 ### Notes on developing templates on Windows
 It is a known issue that pdfgen's output documents look different depending on whether the template
@@ -41,6 +42,7 @@ templates will look like in production.
 * Knut Nygaard, `knut.nygaard@nav.no`
 * Martin Solheim, `martin.solheim@nav.no`
 * Kevin Sillerud, `kevin.sillerud@nav.no`
+* Joakim Kartveit, `joakim.kartveit@nav.no`
 
 ### For NAV employees
-We are also available on the slack channel #barken for internal communication.
+We are also available on the slack channel #team-sykmelding or #flex for internal communication.
