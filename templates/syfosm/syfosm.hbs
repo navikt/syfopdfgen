@@ -313,7 +313,7 @@
     <tr>
         <td class="tr10">4</td>
         <td class="tr30">Mulighet for arbeid</td>
-        <td class="tr13"></td>
+        <td class="tr10"></td>
         <td class="tr10"></td>
         <td class="tr10"></td>
         <td class="tr10"></td>
@@ -327,6 +327,7 @@
             <td><h5>4.1.1 f.o.m.</h5></td>
             <td><h5>4.1.2 t.o.m.</h5></td>
             <td></td>
+            <td></td>
         </tr>
         {{#each sykmelding.perioder }}
             {{#if avventendeInnspillTilArbeidsgiver}}
@@ -335,11 +336,18 @@
                     <td>{{iso_to_date fom }}</td>
                     <td>{{iso_to_date tom }}</td>
                     <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td><h4>4.1.3</h4></td>
-                    <td><h4>Innspill til arbeidsgiver om tilrettelegging</h4></td>
-                    <td colspan="3">{{ avventendeInnspillTilArbeidsgiver }}</td>
+                    <td>
+                        <h4>Innspill til arbeidsgiver om tilrettelegging</h4>
+                        {{ avventendeInnspillTilArbeidsgiver }}
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             {{/if}}
         {{/each}}
@@ -347,7 +355,7 @@
     {{#contains_field sykmelding.perioder "gradert"}}
         <tr>
             <td><h4>4.2</h4></td>
-            <td><h4>Pasienten kan være delvis i arbeid</h4></td>
+            <td><h4>Pasienten kan være delvis i arbeid(sykmeldingsgrad)</h4></td>
             <td><h5>4.2.1 f.o.m.</h5></td>
             <td><h5>4.2.2 t.o.m.</h5></td>
             <td><h5>4.2.3 grad for sykmelding</h5></td>
@@ -378,36 +386,52 @@
             <td><h5>4.3.1 f.o.m</h5></td>
             <td><h5>4.3.2 t.o.m</h5></td>
             <td></td>
+            <td></td>
         </tr>
         {{#each sykmelding.perioder }}
             {{#if aktivitetIkkeMulig }}
                 <tr>
                     <td colspan="2"></td>
-                    <td>{{iso_to_date fom }}</td>
-                    <td>{{iso_to_date tom }}</td>
+                    <td>{{ iso_to_date fom }}</td>
+                    <td>{{ iso_to_date tom }}</td>
+                    <td></td>
                     <td></td>
                 </tr>
                 {{#if aktivitetIkkeMulig.medisinskArsak }}
                     <tr>
                         <td><h4>4.3.3</h4></td>
                         <td><h4>Medisinske årsaker hindrer arbeidsrelatert aktivitet</h4></td>
-                        <td colspan="3"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     {{#if aktivitetIkkeMulig.medisinskArsak.arsak }}
                     <tr>
                         <td><h4>4.3.3.1</h4></td>
-                        <td><h4>Angi hva som er årsaken</h4></td>
-                        <td>{{#each aktivitetIkkeMulig.medisinskArsak.arsak}}
-                            <li>{{this}}</li>
+                        <td>
+                            <h4>Angi hva som er årsaken</h4>
+                            {{#each aktivitetIkkeMulig.medisinskArsak.arsak}}
+                                <li>{{this}}</li>
                             {{/each}}
                         </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     {{/if}}
                     {{#if aktivitetIkkeMulig.medisinskArsak.beskrivelse }}
                     <tr>
                         <td><h4>4.3.3.2</h4></td>
-                        <td><h4>Beskriv nærmere</h4></td>
-                        <td>{{ aktivitetIkkeMulig.medisinskArsak.beskrivelse}}</td>
+                        <td>
+                            <h4>Beskriv nærmere</h4>
+                            {{ aktivitetIkkeMulig.medisinskArsak.beskrivelse}}
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     {{/if}}
                 {{/if}}
@@ -415,26 +439,39 @@
                     <tr>
                         <td><h4>4.3.4</h4></td>
                         <td><h4>Forhold på arbeidsplassen hindrer arbeidsrelatert aktivitet</h4></td>
-                        <td colspan="3"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
-
                     {{#if aktivitetIkkeMulig.arbeidsrelatertArsak.arsak }}
                     <tr>
                         <td><h4>4.3.4.1 </h4></td>
-                        <td><h4>Angi hva som er årsaken</h4></td>
-                        <td>{{#each aktivitetIkkeMulig.arbeidsrelatertArsak.arsak}}
-                            <li>{{this}}</li>
-                        {{/each}}
+                        <td>
+                            <h4>Angi hva som er årsaken</h4>
+                            {{#each aktivitetIkkeMulig.arbeidsrelatertArsak.arsak}}
+                                <li>{{this}}</li>
+                            {{/each}}
                         </td>
-                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
                     {{/if}}
 
                     {{#if aktivitetIkkeMulig.arbeidsrelatertArsak.beskrivelse }}
                         <tr>
                             <td><h4>4.3.4.2 </h4></td>
-                            <td><h4>Beskriv nærmere</h4></td>
-                            <td>{{aktivitetIkkeMulig.arbeidsrelatertArsak.beskrivelse}}</td>
-                        <tr>
+                            <td>
+                                <h4>Beskriv nærmere</h4>
+                                {{aktivitetIkkeMulig.arbeidsrelatertArsak.beskrivelse}}
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
                     {{/if}}
                 {{/if}}
             {{/if}}
