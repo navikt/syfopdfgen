@@ -6,35 +6,6 @@
     "personnummer": "123456789",
     "tlfNummer": "98765432"
   },
-  "hovedDiagnose": {
-    "kode": "K24",
-    "tekst": "Engstelig for hjertesykdom",
-    "oid": "2.16.578.1.12.4.1.1.7170"
-  },
-  "biDiagnoser": [
-    {
-      "kode": "-57",
-      "tekst": "Fysikalsk behandling/rehabilitering",
-      "oid": "2.16.578.1.12.4.1.1.7170"
-    }
-  ],
-  "annenFraversArsakGrunn": [
-    {
-      "kode": "5",
-      "tekst": "Når vedkommende er til nødvendig kontrollundersøkelse som krever minst 24 timers fravær, reisetid medregnet",
-      "oid": "2.16.578.1.12.4.1.1.8131"
-    },
-    {
-      "kode": "6",
-      "tekst": "Når vedkommende myndighet har nedlagt forbud mot at han eller hun arbeider på grunn av smittefare",
-      "oid": "2.16.578.1.12.4.1.1.8131"
-    },
-    {
-      "kode": "4",
-      "tekst": "Når vedkommende på grunn av sykdom, skade eller lyte får tilskott når vedkommende på grunn av sykdom, skade eller lyte får tilskott",
-      "oid": "2.16.578.1.12.4.1.1.8131"
-    }
-  ],
   "sykmelding": {
     "id": "detteerensykmeldingid",
     "msgId": "abcdef",
@@ -42,12 +13,14 @@
     "medisinskVurdering": {
       "hovedDiagnose": {
         "system": "2.16.578.1.12.4.1.1.7170",
-        "kode": "K24"
+        "kode": "K24",
+        "tekst": "Engstelig for hjertesykdom"
       },
       "biDiagnoser": [
         {
           "system": "2.16.578.1.12.4.1.1.7170",
-          "kode": "-57"
+          "kode": "-57",
+          "tekst": "Fysikalsk behandling/rehabilitering"
         }
       ],
       "svangerskap": true,
