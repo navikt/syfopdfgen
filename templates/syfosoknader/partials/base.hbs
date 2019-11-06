@@ -19,11 +19,6 @@
                 <div class="persontekst__personalia">
                     <p class="navn">
                         {{ navn }}
-                        {{# if avsendertype eq "SYSTEM" }}
-							<p>
-								Denne søknaden er autogenerert på grunn av et registrert dødsfall
-							</p>
-                        {{/if}}
                     </p>
                     <p class="id">
                         {{ insert_at fnr 6 }}
@@ -44,6 +39,11 @@
                         </p>
                     {{/if}}
                 </div>
+                {{# if avsendertype eq "SYSTEM" }}
+                  <p class="header__tittel">
+                    Denne søknaden er autogenerert på grunn av et registrert dødsfall
+                  </p>
+                {{/if}}
             </div>
 
             {{# each soknadPerioder as |periode|~}}
