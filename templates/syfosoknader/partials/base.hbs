@@ -39,6 +39,11 @@
                         </p>
                     {{/if}}
                 </div>
+                {{# if avsendertype eq "SYSTEM" }}
+                  <p class="header__tittel">
+                    Denne søknaden er autogenerert på grunn av et registrert dødsfall
+                  </p>
+                {{/if}}
             </div>
 
             {{# each soknadPerioder as |periode|~}}
