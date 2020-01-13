@@ -51,7 +51,12 @@
                     {{ iso_to_date periode.fom }} - {{ iso_to_date periode.tom }}
                 </p>
                 <p>
-                    {{ periode.grad }} % sykmeldt
+                    {{#eq periode.sykmeldingstype "BEHANDLINGSDAGER" }}
+                      Behandlingsdager
+                    {{/eq}}
+                    {{#not_eq periode.sykmeldingstype "BEHANDLINGSDAGER" }}
+                      {{ periode.grad }} % sykmeldt
+                    {{/not_eq}}
                 </p>
                 {{# if periode.faktiskGrad }}
                     <p>
