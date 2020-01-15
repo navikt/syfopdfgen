@@ -38,6 +38,26 @@
     {{/each}}
 {{/eq}}
 
+{{#eq svartype "RADIO_DATO"}}
+    {{#each svar as |s index|~}}
+        {{#eq verdi "CHECKED"}}
+            <div class="oppsummering__sporsmalscontainer">
+                <div class="oppsummering__avkrysset">
+                    <img class="checkbox" src="{{ image "Checkboks.png" }}"/>
+                    <span class="svar svar--checkbox">{{ iso_to_date sporsmalstekst }}</span>
+                </div>
+                {{# if undersporsmal }}
+                    <div class="oppsummering__undersporsmalsliste">
+                        {{# each undersporsmal as |underspm index| ~}}
+                            {{> syfosoknader/partials/spmpartial underspm}}
+                        {{/each}}
+                    </div>
+                {{/if}}
+            </div>
+        {{/eq}}
+    {{/each}}
+{{/eq}}
+
 {{#eq svartype "DATO"}}
     {{#if this.sporsmalstekst}}
         <h3 class="sporsmalstekst">
@@ -101,6 +121,20 @@
         {{/if}}
     </div>
 {{/eq}}
+
+{{#eq svartype "RADIO_GRUPPE_UKEKALENDER"}}
+    <div class="oppsummering__sporsmalscontainer">
+        <h3 class="sporsmalstekst">{{ sporsmalstekst }}</h3>
+        {{# if undersporsmal }}
+            <div class="oppsummering__undersporsmalsliste">
+                {{# each undersporsmal as |underspm index| ~}}
+                    {{> syfosoknader/partials/spmpartial underspm}}
+                {{/each}}
+            </div>
+        {{/if}}
+    </div>
+{{/eq}}
+
 
 {{#eq svartype "RADIO_GRUPPE_TIMER_PROSENT"}}
     <div class="oppsummering__sporsmalscontainer">
