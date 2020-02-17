@@ -78,7 +78,9 @@
 
 {{#eq svartype "CHECKBOX_GRUPPE"}}
     <div class="oppsummering__sporsmalscontainer">
-        <h3 class="sporsmalstekst">{{ sporsmalstekst }}</h3>
+        {{#if this.sporsmalstekst }}
+            <h3 class="sporsmalstekst">{{ this.sporsmalstekst }}</h3>
+        {{/if}}
         {{#if this.undertekst}}
             <p class="undertekst">
                 {{ this.undertekst }}

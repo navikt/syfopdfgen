@@ -7,7 +7,7 @@
   "sykmeldingUtskrevet": "2019-09-01",
   "arbeidsgiver": "LØNNS- OG REGNSKAPSSENTERET",
   "korrigerer": null,
-  "avsendertype": "SYSTEM",
+  "avsendertype": "BRUKER",
   "soknadPerioder": [
     {
       "fom": "2019-09-02",
@@ -20,40 +20,92 @@
   ],
   "sporsmal": [
     {
-      "id": "308901",
+      "id": "660076",
       "tag": "EGENMELDINGER",
-      "sporsmalstekst": "Vi har registrert at du ble sykmeldt torsdag 22. august 2019. Brukte du egenmeldinger og/eller var du sykmeldt i perioden 6. - 21. august 2019?",
+      "sporsmalstekst": "Vi har registrert at du ble sykmeldt mandag 10. februar 2020. Var du syk og borte fra jobb i perioden 25. januar - 9. februar 2020?",
       "undertekst": null,
       "svartype": "JA_NEI",
       "min": null,
       "max": null,
+      "pavirkerAndreSporsmal": false,
       "kriterieForVisningAvUndersporsmal": "JA",
-      "svar": [
-        {
-          "verdi": "JA"
-        }
-      ],
-      "undersporsmal": [
-        {
-          "id": "308902",
-          "tag": "EGENMELDINGER_NAR",
-          "sporsmalstekst": "Hvilke dager før 22. august 2019 var du borte fra jobb?",
+      "svar": [{
+        "verdi": "JA",
+        "avgittAv": null
+      }],
+      "undersporsmal": [{
+        "id": "660077",
+        "tag": "TIDLIGERE_SYK",
+        "sporsmalstekst": null,
+        "undertekst": null,
+        "svartype": "CHECKBOX_GRUPPE",
+        "min": null,
+        "max": null,
+        "pavirkerAndreSporsmal": false,
+        "kriterieForVisningAvUndersporsmal": null,
+        "svar": [],
+        "undersporsmal": [{
+          "id": "660078",
+          "tag": "TIDLIGERE_EGENMELDING",
+          "sporsmalstekst": "Jeg var syk med egenmelding",
           "undertekst": null,
-          "svartype": "PERIODER",
-          "min": "2019-02-22",
-          "max": "2019-08-21",
-          "kriterieForVisningAvUndersporsmal": null,
-          "svar": [
-            {
-              "verdi": "{\"fom\":\"2019-08-01\",\"tom\":\"2019-08-02\"}"
-            },
-            {
-              "verdi": "{\"fom\":\"2019-08-05\",\"tom\":\"2019-08-09\"}"
-            }
-          ],
-          "undersporsmal": []
-        }
-      ]
+          "svartype": "CHECKBOX",
+          "min": null,
+          "max": null,
+          "pavirkerAndreSporsmal": false,
+          "kriterieForVisningAvUndersporsmal": "CHECKED",
+          "svar": [{
+            "verdi": "CHECKED",
+            "avgittAv": null
+          }],
+          "undersporsmal": [{
+            "id": "660079",
+            "tag": "EGENMELDINGER_NAR",
+            "sporsmalstekst": "Hvilke dager var du syk med egenmelding? Du trenger bare oppgi dager før 10. februar 2020.",
+            "undertekst": null,
+            "svartype": "PERIODER",
+            "min": "2019-08-10",
+            "max": "2020-02-09",
+            "pavirkerAndreSporsmal": false,
+            "kriterieForVisningAvUndersporsmal": null,
+            "svar": [{
+              "verdi": "{\"fom\":\"2020-01-23\",\"tom\":\"2020-02-09\"}",
+              "avgittAv": null
+            }],
+            "undersporsmal": []
+          }]
+        }, {
+          "id": "660080",
+          "tag": "TIDLIGERE_PAPIRSYKMELDING",
+          "sporsmalstekst": "Jeg var syk med papirsykmelding",
+          "undertekst": null,
+          "svartype": "CHECKBOX",
+          "min": null,
+          "max": null,
+          "pavirkerAndreSporsmal": false,
+          "kriterieForVisningAvUndersporsmal": "CHECKED",
+          "svar": [{
+            "verdi": "CHECKED",
+            "avgittAv": null
+          }],
+          "undersporsmal": [{
+            "id": "660081",
+            "tag": "PAPIRSYKMELDING_NAR",
+            "sporsmalstekst": "Hvilke dager var du syk med papirsykmelding? Du trenger bare oppgi dager før 10. februar 2020.",
+            "undertekst": null,
+            "svartype": "PERIODER",
+            "min": "2019-08-10",
+            "max": "2020-02-09",
+            "pavirkerAndreSporsmal": false,
+            "kriterieForVisningAvUndersporsmal": null,
+            "svar": [{
+              "verdi": "{\"fom\":\"2020-01-23\",\"tom\":\"2020-02-09\"}",
+              "avgittAv": null
+            }],
+            "undersporsmal": []
+          }]
+        }]
+      }]
     },
     {
       "id": "308903",
