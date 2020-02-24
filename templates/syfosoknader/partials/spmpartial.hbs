@@ -129,10 +129,10 @@
         <h3 class="sporsmalstekst">{{ sporsmalstekst }}</h3>
         {{# each svar }}
             <p class="svar svar--dato">
-                {{#eq verdi "" }}
+                {{#eq verdi "Ikke til behandling" }}
                     Ikke til behandling
                 {{/eq}}
-                {{#not_eq verdi "" }}
+                {{#not_eq verdi "Ikke til behandling" }}
                     {{ iso_to_date verdi }}
                 {{/not_eq}}
             </p>
