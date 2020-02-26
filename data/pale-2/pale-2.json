@@ -1,118 +1,125 @@
 {
-  "_comment": "data er generert av PALEs test data generator",
-  "arbeidsvurderingVedSykefravaer": true,
-  "arbeidsavklaringsPenger": true,
-  "yrkesrettetAttfoering": false,
-  "ufoerepensjon": true,
-  "pasient": {
-    "fornavn": "Test",
-    "mellomnavn": "Testerino",
-    "etternavn": "Testsen",
-    "foedselsnummer": "0123456789",
-    "navKontor": "NAV Stockholm",
-    "adresse": "Oppdiktet veg 99",
-    "postnummer": 9999,
-    "poststed": "Stockholm",
-    "yrke": "Taco spesialist",
-    "arbeidsgiver": {
-      "navn": "NAV IKT",
-      "adresse": "Sannergata 2",
-      "postnummer": "0557",
-      "poststed": "Oslo"
-    }
-  },
-  "sykdomsOpplysninger": {
-    "hoveddiagnose": {
-      "tekst": "Fysikalsk behandling/rehabilitering",
-      "kode": "-57"
-    },
-    "bidiagnose": [{
-      "tekst": "Engstelig for hjertesykdom",
-      "kode": "K24"
-    }],
-    "arbeidsufoerFra": "2019-06-23T08:12:03.866543+02:00",
-    "sykdomsHistorie": "Tekst",
-    "statusPresens": "Tekst",
-    "boerNavKontoretVurdereOmDetErEnYrkesskade": true
-  },
-  "plan": {
-    "utredning": null,
-    "behandling": {
-      "tekst": "2 timer i uken med svømming",
-      "dato": "2019-06-26T08:12:03.876126+02:00",
-      "antattVentetIUker": 1
-    },
-    "utredningsplan": "Tekst",
-    "behandlingsplan": "Tekst",
-    "vurderingAvTidligerePlan": "Tekst",
-    "naarSpoerreOmNyeLegeopplysninger": "Tekst",
-    "videreBehandlingIkkeAktuellGrunn": "Tekst"
-  },
-  "forslagTilTiltak": {
-    "behov": true,
-    "kjoepAvHelsetjenester": true,
-    "reisetilskudd": false,
-    "aktivSykMelding": false,
-    "hjelpemidlerArbeidsplassen": true,
+  "legeerklaering": {
+    "id": "12314",
+    "arbeidsvurderingVedSykefravaer": true,
     "arbeidsavklaringsPenger": true,
-    "friskemeldingTilArbeidsformidling": false,
-    "andreTiltak": "Trenger taco i lunsjen",
-    "naermereOpplysninger": "Tacoen må bestå av ordentlige råvarer",
-    "tekst": "Pasienten har store problemer med fordøying av annen mat enn Taco"
-  },
-  "funksjonsOgArbeidsevne": {
-    "vurderingFunksjonsevne": "Kan ikke spise annet enn Taco",
-    "hjemmearbeidende": false,
-    "student": false,
-    "annetArbeid": "Reisende taco tester",
-    "kravTilArbeid": "Kun taco i kantina",
-    "kanGjenopptaTidligereArbeid": true,
-    "kanGjenopptaTidligereArbeidNaa": true,
-    "kanGjenopptaTidligereArbeidEtterBehandling": true,
-    "kanIkkeINaaverendeArbeid": "Spise annen mat enn Taco",
-    "kanTaAnnetArbeid": true,
-    "kanTaAnnetArbeidNaa": true,
-    "kanTaAnnetArbeidEtterBehandling": true,
-    "kanIkkeIAnnetArbeid": "Spise annen mat enn Taco",
-    "iintektsgivendeArbeid": false
-  },
-  "prognose": {
-    "vilForbedreArbeidsevne": true,
-    "anslaatVarighetSykdom": "1 uke",
-    "anslaatVarighetFunksjonsNedsetting": "2 uker",
-    "anslaatVarighetNedsattArbeidsevne": "4 uker"
-  },
-  "aarsaksSammenheng": "Funksjonsnedsettelsen har stor betydning for at arbeidsevnen er nedsatt",
-  "andreOpplysninger": "Tekst",
-  "kontakt": {
-    "skalKontakteBehandlendeLege": true,
-    "skalKontakteArbeidsgiver": true,
-    "skalKontakteBasisgruppe": false,
-    "kontakteAnnenInstans": null,
-    "oenskesKopiAvVedtak": true
-  },
-  "pasientenBurdeIkkeVite": null,
-  "signatur": {
-    "dato": "2019-06-25T08:12:03.900727+02:00",
-    "navn": "Lege Legesen",
-    "adresse": "Legeveien 33",
-    "postnummer": 9999,
-    "poststed": "Stockholm",
-    "signatur": "Lege Legesen",
-    "tlfNummer": "98765432"
+    "yrkesrettetAttfoering": false,
+    "ufoerepensjon": true,
+    "pasient": {
+      "fornavn": "Test",
+      "mellomnavn": "Testerino",
+      "etternavn": "Testsen",
+      "foedselsnummer": "0123456789",
+      "navKontor": "NAV Stockholm",
+      "adresse": "Oppdiktet veg 99",
+      "postnummer": 9999,
+      "poststed": "Stockholm",
+      "yrke": "Taco spesialist",
+      "arbeidsgiver": {
+        "navn": "NAV IKT",
+        "adresse": "Sannergata 2",
+        "postnummer": 557,
+        "poststed": "Oslo"
+      }
+    },
+    "sykdomsOpplysninger": {
+      "hoveddiagnose": {
+        "tekst": "Fysikalsk behandling/rehabilitering",
+        "kode": "-57"
+      },
+      "bidiagnose": [
+        {
+          "tekst": "Engstelig for hjertesykdom",
+          "kode": "K24"
+        }
+      ],
+      "arbeidsufoerFra": "2020-02-23T16:17:42.529967+01:00",
+      "sykdomsHistorie": "Tekst",
+      "statusPresens": "Tekst",
+      "boerNavKontoretVurdereOmDetErEnYrkesskade": true
+    },
+    "plan": {
+      "utredning": null,
+      "behandling": {
+        "tekst": "2 timer i uken med svømming",
+        "dato": "2020-02-26T16:17:42.532825+01:00",
+        "antattVentetIUker": 1
+      },
+      "utredningsplan": "Tekst",
+      "behandlingsplan": "Tekst",
+      "vurderingAvTidligerePlan": "Tekst",
+      "naarSpoerreOmNyeLegeopplysninger": "Tekst",
+      "videreBehandlingIkkeAktuellGrunn": "Tekst"
+    },
+    "forslagTilTiltak": {
+      "behov": true,
+      "kjoepAvHelsetjenester": true,
+      "reisetilskudd": false,
+      "aktivSykMelding": false,
+      "hjelpemidlerArbeidsplassen": true,
+      "arbeidsavklaringsPenger": true,
+      "friskemeldingTilArbeidsformidling": false,
+      "andreTiltak": "Trenger taco i lunsjen",
+      "naermereOpplysninger": "Tacoen må bestå av ordentlige råvarer",
+      "tekst": "Pasienten har store problemer med fordøying av annen mat enn Taco"
+    },
+    "funksjonsOgArbeidsevne": {
+      "vurderingFunksjonsevne": "Kan ikke spise annet enn Taco",
+      "hjemmearbeidende": false,
+      "student": false,
+      "annetArbeid": "Reisende taco tester",
+      "kravTilArbeid": "Kun taco i kantina",
+      "kanGjenopptaTidligereArbeid": true,
+      "kanGjenopptaTidligereArbeidNaa": true,
+      "kanGjenopptaTidligereArbeidEtterBehandling": true,
+      "kanIkkeINaaverendeArbeid": "Spise annen mat enn Taco",
+      "kanTaAnnetArbeid": true,
+      "kanTaAnnetArbeidNaa": true,
+      "kanTaAnnetArbeidEtterBehandling": true,
+      "kanIkkeIAnnetArbeid": "Spise annen mat enn Taco",
+      "iintektsgivendeArbeid": false
+    },
+    "prognose": {
+      "vilForbedreArbeidsevne": true,
+      "anslaatVarighetSykdom": "1 uke",
+      "anslaatVarighetFunksjonsNedsetting": "2 uker",
+      "anslaatVarighetNedsattArbeidsevne": "4 uker"
+    },
+    "aarsaksSammenheng": "Funksjonsnedsettelsen har stor betydning for at arbeidsevnen er nedsatt",
+    "andreOpplysninger": "Tekst",
+    "kontakt": {
+      "skalKontakteBehandlendeLege": true,
+      "skalKontakteArbeidsgiver": true,
+      "skalKontakteBasisgruppe": false,
+      "kontakteAnnenInstans": null,
+      "oenskesKopiAvVedtak": true
+    },
+    "pasientenBurdeIkkeVite": null,
+    "signatur": {
+      "dato": "2020-02-25T16:17:42.536406+01:00",
+      "navn": "Lege Legesen",
+      "adresse": "Legeveien 33",
+      "postnummer": "9999",
+      "poststed": "Stockholm",
+      "signatur": "Lege Legesen",
+      "tlfNummer": "98765432"
+    },
+    "signaturDato": "2020-02-26T16:17:42.536533"
   },
   "validationResult": {
     "status": "INVALID",
     "ruleHits": [
       {
-        "ruleName": "BEHANDLER_KI_NOT_USING_VALID_DIAGNOSECODE_TYPE",
-        "messageForSender": "Behandler er manuellterapeut/kiropraktor eller fysioterapeut med autorisasjon har angitt annen diagnose enn kapitel L (muskel og skjelettsykdommer)",
-        "messageForUser": "Den som skrev sykmeldingen mangler autorisasjon."
+        "ruleName": "PASIENT_YNGRE_ENN_13",
+        "messageForSender": "Pasienten er under 13 år. Sykmelding kan ikke benyttes.",
+        "messageForUser": "Pasienten er under 13 år. Sykmelding kan ikke benyttes.",
+        "status": "INVALID"
       },
       {
-        "ruleName": "NUMBER_OF_TREATMENT_DAYS_SET",
-        "messageForSender": "Hvis behandlingsdager er angitt sendes meldingen til manuell behandling.",
-        "messageForUser": "Hvis behandlingsdager er angitt sendes meldingen til manuell behandling."
+        "ruleName": "PASIENT_ELDRE_ENN_70",
+        "messageForSender": "Pasienten er over 70 år. Sykmelding kan ikke benyttes.",
+        "messageForUser": "Sykmelding kan ikke benyttes etter at du har fylt 70 år",
+        "status": "INVALID"
       }
     ]
   }
