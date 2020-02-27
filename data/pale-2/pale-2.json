@@ -2,14 +2,14 @@
   "legeerklaering": {
     "id": "12314",
     "arbeidsvurderingVedSykefravaer": true,
-    "arbeidsavklaringsPenger": true,
-    "yrkesrettetAttfoering": false,
-    "ufoerepensjon": true,
+    "arbeidsavklaringspenger": true,
+    "yrkesrettetAttforing": false,
+    "uforepensjon": true,
     "pasient": {
       "fornavn": "Test",
       "mellomnavn": "Testerino",
       "etternavn": "Testsen",
-      "foedselsnummer": "0123456789",
+      "fnr": "0123456789",
       "navKontor": "NAV Stockholm",
       "adresse": "Oppdiktet veg 99",
       "postnummer": 9999,
@@ -22,7 +22,7 @@
         "poststed": "Oslo"
       }
     },
-    "sykdomsOpplysninger": {
+    "sykdomsopplysninger": {
       "hoveddiagnose": {
         "tekst": "Fysikalsk behandling/rehabilitering",
         "kode": "-57"
@@ -33,70 +33,70 @@
           "kode": "K24"
         }
       ],
-      "arbeidsufoerFra": "2020-02-23T16:17:42.529967+01:00",
-      "sykdomsHistorie": "Tekst",
+      "arbeidsuforFra": "2020-02-24T14:31:20.977319+01:00",
+      "sykdomshistorie": "Tekst",
       "statusPresens": "Tekst",
-      "boerNavKontoretVurdereOmDetErEnYrkesskade": true
+      "borNavKontoretVurdereOmDetErEnYrkesskade": true
     },
     "plan": {
       "utredning": null,
       "behandling": {
         "tekst": "2 timer i uken med svømming",
-        "dato": "2020-02-26T16:17:42.532825+01:00",
+        "dato": "2020-02-27T14:31:20.980805+01:00",
         "antattVentetIUker": 1
       },
       "utredningsplan": "Tekst",
       "behandlingsplan": "Tekst",
       "vurderingAvTidligerePlan": "Tekst",
-      "naarSpoerreOmNyeLegeopplysninger": "Tekst",
-      "videreBehandlingIkkeAktuellGrunn": "Tekst"
+      "narSporreOmNyeLegeopplysninger": "Tekst",
+      "videreBehandlingIkkeAktueltGrunn": "Tekst"
     },
     "forslagTilTiltak": {
       "behov": true,
-      "kjoepAvHelsetjenester": true,
+      "kjopAvHelsetjenester": true,
       "reisetilskudd": false,
-      "aktivSykMelding": false,
+      "aktivSykmelding": false,
       "hjelpemidlerArbeidsplassen": true,
-      "arbeidsavklaringsPenger": true,
-      "friskemeldingTilArbeidsformidling": false,
+      "arbeidsavklaringspenger": true,
+      "friskmeldingTilArbeidsformidling": false,
       "andreTiltak": "Trenger taco i lunsjen",
       "naermereOpplysninger": "Tacoen må bestå av ordentlige råvarer",
       "tekst": "Pasienten har store problemer med fordøying av annen mat enn Taco"
     },
     "funksjonsOgArbeidsevne": {
       "vurderingFunksjonsevne": "Kan ikke spise annet enn Taco",
+      "inntektsgivendeArbeid": false,
       "hjemmearbeidende": false,
       "student": false,
       "annetArbeid": "Reisende taco tester",
       "kravTilArbeid": "Kun taco i kantina",
       "kanGjenopptaTidligereArbeid": true,
-      "kanGjenopptaTidligereArbeidNaa": true,
+      "kanGjenopptaTidligereArbeidNa": true,
       "kanGjenopptaTidligereArbeidEtterBehandling": true,
-      "kanIkkeINaaverendeArbeid": "Spise annen mat enn Taco",
+      "kanIkkeGjenopptaNaverendeArbeid": "Spise annen mat enn Taco",
       "kanTaAnnetArbeid": true,
-      "kanTaAnnetArbeidNaa": true,
+      "kanTaAnnetArbeidNa": true,
       "kanTaAnnetArbeidEtterBehandling": true,
-      "kanIkkeIAnnetArbeid": "Spise annen mat enn Taco",
-      "iintektsgivendeArbeid": false
+      "kanIkkeTaAnnetArbeid": "Spise annen mat enn Taco"
     },
     "prognose": {
       "vilForbedreArbeidsevne": true,
-      "anslaatVarighetSykdom": "1 uke",
-      "anslaatVarighetFunksjonsNedsetting": "2 uker",
-      "anslaatVarighetNedsattArbeidsevne": "4 uker"
+      "anslattVarighetSykdom": "1 uke",
+      "anslattVarighetFunksjonsnedsetting": "2 uker",
+      "anslattVarighetNedsattArbeidsevne": "4 uker"
     },
-    "aarsaksSammenheng": "Funksjonsnedsettelsen har stor betydning for at arbeidsevnen er nedsatt",
+    "arsakssammenheng": "Funksjonsnedsettelsen har stor betydning for at arbeidsevnen er nedsatt",
     "andreOpplysninger": "Tekst",
     "kontakt": {
       "skalKontakteBehandlendeLege": true,
       "skalKontakteArbeidsgiver": true,
       "skalKontakteBasisgruppe": false,
       "kontakteAnnenInstans": null,
-      "oenskesKopiAvVedtak": true
+      "onskesKopiAvVedtak": true
     },
     "pasientenBurdeIkkeVite": null,
     "signatur": {
-      "dato": "2020-02-25T16:17:42.536406+01:00",
+      "dato": "2020-02-26T14:31:20.984564+01:00",
       "navn": "Lege Legesen",
       "adresse": "Legeveien 33",
       "postnummer": "9999",
@@ -104,7 +104,7 @@
       "signatur": "Lege Legesen",
       "tlfNummer": "98765432"
     },
-    "signaturDato": "2020-02-26T16:17:42.536533"
+    "signaturDato": "2020-02-27T14:31:20.984695"
   },
   "validationResult": {
     "status": "INVALID",

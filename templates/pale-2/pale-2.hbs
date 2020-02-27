@@ -92,7 +92,7 @@
         .infoblock {
         }
     </style>
-    <title>{{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}Legeerklæring for {{ pasient.fornavn }}{{#if pasient.mellomnavn }} {{pasient.mellomnavn}}{{/if}} {{pasient.etternavn}} ({{ pasient.foedselsnummer }}) </title>
+    <title>{{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}Legeerklæring for {{ pasient.fornavn }}{{#if pasient.mellomnavn }} {{pasient.mellomnavn}}{{/if}} {{pasient.etternavn}} ({{ pasient.fnr }}) </title>
 </head>
 <body>
 <table class="header">
@@ -121,17 +121,17 @@
      <tr>
         <td><h4>0.2</h4></td>
         <td>Arbeidsavklaringspenger</td>
-        <td>{{#if legeerklaering.arbeidsavklaringsPenger}}X{{/if}}</td>
+        <td>{{#if legeerklaering.arbeidsavklaringspenger}}X{{/if}}</td>
     </tr>
      <tr>
         <td><h4>0.3</h4></td>
         <td>YrkesrettetAttfoering</td>
-        <td>{{#if legeerklaering.yrkesrettetAttfoering }}X{{/if}}</td>
+        <td>{{#if legeerklaering.yrkesrettetAttforing }}X{{/if}}</td>
     </tr>
      <tr>
         <td><h4>0.4</h4></td>
         <td>Uførepensjon</td>
-        <td>{{#if legeerklaering.ufoerepensjon }}X{{/if}}</td>
+        <td>{{#if legeerklaering.uforepensjon }}X{{/if}}</td>
     </tr>
 </table>
 
@@ -197,34 +197,34 @@
     </tr>
     </thead>
     <tbody>
-    {{#if legeerklaering.sykdomsOpplysninger.hoveddiagnose }}
+    {{#if legeerklaering.sykdomsopplysninger.hoveddiagnose }}
         <tr>
             <td><h4>2.1</h4></td>
             <td><h4>Hoveddiagnose</h4></td>
             <td>
                 <h4>2.1.1 Kode</h4>
-                <p>{{ legeerklaering.sykdomsOpplysninger.hoveddiagnose.kode }}</p>
+                <p>{{ legeerklaering.sykdomsopplysninger.hoveddiagnose.kode }}</p>
             </td>
             <td>
                 <h4>2.1.2 Diagnose</h4>
-                <p>{{ legeerklaering.sykdomsOpplysninger.hoveddiagnose.tekst }}</p>
+                <p>{{ legeerklaering.sykdomsopplysninger.hoveddiagnose.tekst }}</p>
             </td>
         </tr>
     {{/if}}
-    {{#if legeerklaering.sykdomsOpplysninger.bidiagnose }}
+    {{#if legeerklaering.sykdomsopplysninger.bidiagnose }}
         <tr>
             <td><h4>2.2</h4></td>
             <td><h4>Bidiagnoser</h4></td>
             <td>
                 <h4>2.2.1 Kode</h4>
-                {{#each legeerklaering.sykdomsOpplysninger.bidiagnose }}
+                {{#each legeerklaering.sykdomsopplysninger.bidiagnose }}
                     <p>
                         {{ kode }}</p>
                 {{/each}}
             </td>
             <td>
                 <h4>2.2.2 Diagnose</h4>
-                {{#each legeerklaering.sykdomsOpplysninger.bidiagnose }}
+                {{#each legeerklaering.sykdomsopplysninger.bidiagnose }}
                     <p>{{ tekst }}</p>
                 {{/each}}
             </td>
@@ -233,25 +233,25 @@
     <tr>
         <td><h4>2.3</h4></td>
         <td><h4>Helt arbeidsufør f.o.m.</h4></td>
-        <td>{{ iso_to_nor_date legeerklaering.sykdomsOpplysninger.arbeidsufoerFra }}</td>
+        <td>{{ iso_to_nor_date legeerklaering.sykdomsopplysninger.arbeidsuforFra }}</td>
     </tr>
     <tr>
         <td><h4>2.4</h4></td>
         <td><h4>Sykehistorie med symptomer og behandling</h4></td>
-        <td>{{ legeerklaering.sykdomsOpplysninger.sykdomsHistorie }}</td>
+        <td>{{ legeerklaering.sykdomsopplysninger.sykdomshistorie }}</td>
     </tr>
     <tr>
         <td><h4>2.5</h4></td>
         <td><h4>Status presens (angi dato). Resultat av relevante undersøkelser.</h4></td>
-        <td>{{ legeerklaering.sykdomsOpplysninger.statusPresens }}</td>
+        <td>{{ legeerklaering.sykdomsopplysninger.statusPresens }}</td>
     </tr>
     <tr>
         <td><h4>2.6</h4></td>
         <td><h4>Bør NAV-kontoret vurdere om det er en:</h4></td>
         <td>
             <h4>2.6.1 Yrkesskade/Yrkessykdom</h4>
-            {{#if legeerklaering.sykdomsOpplysninger.boerNavKontoretVurdereOmDetErEnYrkesskade }}JA{{/if}}
-            {{#unless legeerklaering.sykdomsOpplysninger.boerNavKontoretVurdereOmDetErEnYrkesskade}}NEI{{/unless}}
+            {{#if legeerklaering.sykdomsopplysninger.borNavKontoretVurdereOmDetErEnYrkesskade }}JA{{/if}}
+            {{#unless legeerklaering.sykdomsopplysninger.borNavKontoretVurdereOmDetErEnYrkesskade}}NEI{{/unless}}
         </td>
     </tr>
     </tbody>
@@ -320,12 +320,12 @@
         <tr>
             <td><h4>3.6</h4></td>
             <td><h4>Når er det hensiktsmessig, i henhold til utrednings og behandlingsopplegget at NAV-kontoret ber om nye legeopplysninger?</h4></td>
-            <td>{{ legeerklaering.plan.naarSpoerreOmNyeLegeopplysninger }}</td>
+            <td>{{ legeerklaering.plan.narSporreOmNyeLegeopplysninger }}</td>
         </tr>
         <tr>
             <td><h4>3.7</h4></td>
             <td><h4>Hvis videre behandling ikke er aktuell, gi begrunnelse</h4></td>
-            <td>{{ legeerklaering.plan.videreBehandlingIkkeAktuellGrunn }}</td>
+            <td>{{ legeerklaering.plan.videreBehandlingIkkeAktueltGrunn }}</td>
         </tr>
     </tbody>
 </table>
@@ -350,22 +350,22 @@
             <td>
                 <h4>Tiltak nå</h4>
                 <ul>
-                    {{#if legeerklaering.forslagTilTiltak.kjoepAvHelsetjenester}}
+                    {{#if legeerklaering.forslagTilTiltak.kjopAvHelsetjenester}}
                     <li>a. Kjøp av helse-tjenester</li>
                     {{/if}}
                     {{#if legeerklaering.forslagTilTiltak.reisetilskudd }}
                     <li>b. Reisetilskott i stedet for sykepenger/ arbeidsavklaringspenger</li>
                     {{/if}}
-                    {{#if legeerklaering.forslagTilTiltak.aktivSykMelding}}
+                    {{#if legeerklaering.forslagTilTiltak.aktivSykmelding}}
                     <li>c. Aktiv syk-melding</li>
                     {{/if}}
                     {{#if legeerklaering.forslagTilTiltak.hjelpemidlerArbeidsplassen}}
                     <li>d. Hjelpemidler på arb.plassen</li>
                     {{/if}}
-                    {{#if legeerklaering.forslagTilTiltak.arbeidsavklaringsPenger }}
+                    {{#if legeerklaering.forslagTilTiltak.arbeidsavklaringspenger }}
                     <li>e. Arbeidsavklarings-penger</li>
                     {{/if}}
-                    {{#if legeerklaering.forslagTilTiltak.friskemeldingTilArbeidsformidling}}
+                    {{#if legeerklaering.forslagTilTiltak.friskmeldingTilArbeidsformidling}}
                     <li>f. Friskemelding til arbeidsformidling</li>
                     {{/if}}
                     {{#if legeerklaering.forslagTilTiltak.andreTiltak }}
@@ -412,7 +412,7 @@
     <tr>
         <td><h4>5.2</h4></td>
         <td><h4>Pasienten er:</h4></td>
-        {{#if legeerklaering.funksjonsOgArbeidsevne.iIntektsgivendeArbeid }}i intektsgivende arbeid{{/if}}
+        {{#if legeerklaering.funksjonsOgArbeidsevne.inntektsgivendeArbeid }}i intektsgivende arbeid{{/if}}
         {{#if legeerklaering.funksjonsOgArbeidsevne.hjemmearbeidende }}hjemmearbeidende{{/if}}
         {{#if legeerklaering.funksjonsOgArbeidsevne.student }}student{{/if}}
         {{#if legeerklaering.funksjonsOgArbeidsevne.annetArbeid}}{{legeerklaering.funksjonsOgArbeidsevne.annetArbeid}}{{/if}}
@@ -432,7 +432,7 @@
         </td>
         <td>
             <h4>5.4.2 Når kan pasient gjenoppta det tidligere arbeid</h4>
-            {{#if legeerklaering.funksjonsOgArbeidsevne.kanGjenopptaTidligereArbeidNaa }}Nå{{/if}}
+            {{#if legeerklaering.funksjonsOgArbeidsevne.kanGjenopptaTidligereArbeidNa }}Nå{{/if}}
             {{#if legeerklaering.funksjonsOgArbeidsevne.kanGjenopptaTidligereArbeidEtterBehandling }}Etter Behandling{{/if}}
         </td>
     </tr>
@@ -446,7 +446,7 @@
         </td>
         <td>
             <h4>5.5.2 Når kan pasient gjenoppta det tidligere arbeid</h4>
-            {{#if legeerklaering.funksjonsOgArbeidsevne.kanTaAnnetArbeidNaa }}Nå{{/if}}
+            {{#if legeerklaering.funksjonsOgArbeidsevne.kanTaAnnetArbeidNa }}Nå{{/if}}
             {{#if legeerklaering.funksjonsOgArbeidsevne.kanTaAnnetArbeidEtterBehandling }}Etter Behandling{{/if}}
         </td>
     </tr>
@@ -456,11 +456,11 @@
         <td><h4>Vurdering av arbeidsevnen hensyn</h4></td>
         <td>
             <h4>5.6.1 Hva kan pasient ikke gjøre i den nåværende arbeid?</h4>
-            {{ legeerklaering.funksjonsOgArbeidsevne.kanIkkeINaaverendeArbeid }}
+            {{ legeerklaering.funksjonsOgArbeidsevne.kanIkkeGjenopptaNaverendeArbeid }}
         </td>
         <td>
             <h4>5.6.2 Hvilke andre hensyn må eventuelt tas ved valg av annet yrke/arbeid?</h4>
-            {{ legeerklaering.funksjonsOgArbeidsevne.kanIkkeIAnnetArbeid }}
+            {{ legeerklaering.funksjonsOgArbeidsevne.kanIkkeTaAnnetArbeid }}
         </td>
     </tr>
     </tbody>
@@ -487,21 +487,21 @@
         <td><h4>6.2</h4></td>
         <td>
             <h4>b) Anslå varigheten av sykdom/skade (evt. lyte)</h4>
-            {{ legeerklaering.prognose.anslaatVarighetSykdom }}
+            {{ legeerklaering.prognose.anslattVarighetSykdom }}
         </td>
     </tr>
     <tr>
         <td><h4>6.3</h4></td>
         <td>
             <h4>c) Anslå varigheten av funksjonsnedsettelsen</h4>
-            {{ legeerklaering.prognose.anslaatVarighetFunksjonsNedsetting }}
+            {{ legeerklaering.prognose.anslattVarighetFunksjonsnedsetting }}
         </td>
     </tr>
     <tr>
         <td><h4>6.4</h4></td>
         <td>
             <h4>d) Anslå varigheten av den nedsatte arbeidsevnen</h4>
-            {{ legeerklaering.prognose.anslaatVarighetNedsattArbeidsevne }}
+            {{ legeerklaering.prognose.anslattVarighetNedsattArbeidsevne }}
         </td>
     </tr>
     </tbody>
@@ -520,7 +520,7 @@
         <td><h4>7.1</h4></td>
         <td>
             <h4>Anslå hvor stor betydning funksjonsnedsettelsen har for at arbeidsevnen er nedsatt</h4>
-            {{ legeerklaering.aarsaksSammenheng }}
+            {{ legeerklaering.arsakssammenheng }}
         </td>
     </tr>
     </tbody>
@@ -572,8 +572,8 @@
     </tr>
     <tr>
         <td><h4>9.2 Ønsker du kopi av vedtaket?</h4></td>
-        {{#if legeerklaering.kontakt.oenskesKopiAvVedtak}}JA{{/if}}
-        {{#unless legeerklaering.kontakt.oenskesKopiAvVedtak}}NEI{{/unless}}
+        {{#if legeerklaering.kontakt.onskesKopiAvVedtak}}JA{{/if}}
+        {{#unless legeerklaering.kontakt.onskesKopiAvVedtak}}NEI{{/unless}}
     </tr>
     </tbody>
 </table>
@@ -594,7 +594,7 @@
     <tr>
         <td><h4>10.2 Hvis Ja, oppgi hva pasienten ikke bør vite</h4></td>
         {{ legeerklaering.pasientenBurdeIkkeVite }}
-        {{#unless legeerklaering.kontakt.oenskesKopiAvVedtak}}NEI{{/unless}}
+        {{#unless legeerklaering.kontakt.onskesKopiAvVedtak}}NEI{{/unless}}
     </tr>
     </tbody>
 </table>
