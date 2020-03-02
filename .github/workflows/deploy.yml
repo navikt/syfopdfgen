@@ -19,6 +19,9 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t $(cat .docker_image):$(cat .docker_tag) .
+      - name: Tag latest Docker image
+        run: |
+          docker tag $(cat .docker_image):$(cat .docker_tag) $(cat .docker_image):latest
       - name: Login to Github Package Registry
         env:
           DOCKER_USERNAME: x-access-token
@@ -27,6 +30,8 @@ jobs:
           echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin docker.pkg.github.com
       - name: Push Docker image
         run: "docker push $(cat .docker_image):$(cat .docker_tag)"
+      - name: Push latest Docker image
+        run: "docker push $(cat .docker_image):latest"
       - name: deploy to dev-fss
         uses: navikt/deployment-cli/action@0.4.0
         env:
