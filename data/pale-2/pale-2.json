@@ -36,7 +36,8 @@
       "arbeidsuforFra": "2020-02-24T14:31:20.977319+01:00",
       "sykdomshistorie": "Tekst",
       "statusPresens": "Tekst",
-      "borNavKontoretVurdereOmDetErEnYrkesskade": true
+      "borNavKontoretVurdereOmDetErEnYrkesskade": true,
+      "yrkesSkadeDato": "2020-02-24T14:31:20.977319+01:00"
     },
     "plan": {
       "utredning": null,
