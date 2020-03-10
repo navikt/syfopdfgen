@@ -33,17 +33,17 @@
           "kode": "K24"
         }
       ],
-      "arbeidsuforFra": "2020-02-24T14:31:20.977319+01:00",
+      "arbeidsuforFra": "2020-03-06T13:04:49.594953",
       "sykdomshistorie": "Tekst",
       "statusPresens": "Tekst",
       "borNavKontoretVurdereOmDetErEnYrkesskade": true,
-      "yrkesSkadeDato": "2020-02-24T14:31:20.977319+01:00"
+      "yrkesSkadeDato": "2020-03-05T13:04:49.597058"
     },
     "plan": {
       "utredning": null,
       "behandling": {
         "tekst": "2 timer i uken med svømming",
-        "dato": "2020-02-27T14:31:20.980805+01:00",
+        "dato": "2020-03-09T13:04:49.598296",
         "antattVentetIUker": 1
       },
       "utredningsplan": "Tekst",
@@ -96,8 +96,9 @@
       "onskesKopiAvVedtak": true
     },
     "pasientenBurdeIkkeVite": null,
+    "tilbakeholdInnhold": false,
     "signatur": {
-      "dato": "2020-02-26T14:31:20.984564+01:00",
+      "dato": "2020-03-08T13:04:49.60254",
       "navn": "Lege Legesen",
       "adresse": "Legeveien 33",
       "postnummer": "9999",
@@ -105,7 +106,7 @@
       "signatur": "Lege Legesen",
       "tlfNummer": "98765432"
     },
-    "signaturDato": "2020-02-27T14:31:20.984695"
+    "signaturDato": "2020-03-09T13:04:49.60264"
   },
   "validationResult": {
     "status": "INVALID",
@@ -114,13 +115,13 @@
         "ruleName": "PASIENT_YNGRE_ENN_13",
         "messageForSender": "Pasienten er under 13 år. Sykmelding kan ikke benyttes.",
         "messageForUser": "Pasienten er under 13 år. Sykmelding kan ikke benyttes.",
-        "status": "INVALID"
+        "ruleStatus": "INVALID"
       },
       {
         "ruleName": "PASIENT_ELDRE_ENN_70",
         "messageForSender": "Pasienten er over 70 år. Sykmelding kan ikke benyttes.",
         "messageForUser": "Sykmelding kan ikke benyttes etter at du har fylt 70 år",
-        "status": "INVALID"
+        "ruleStatus": "INVALID"
       }
     ]
   }
