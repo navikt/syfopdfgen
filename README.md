@@ -6,6 +6,9 @@ Repository for digisyfo pdfgen templates.
 
 * [pdfgen](https://github.com/navikt/pdfgen)
 
+#### Creating a docker image
+Creating a docker image should be as simple as `docker build -t syfopdfgen .`
+
 ## Getting started
 ### Run in development mode
 To run the application with templates, data and fonts locally mounted you can use
@@ -39,10 +42,15 @@ templates will look like in production.
 
 ## Contact us
 ### Code/project related questions can be sent to
-* Knut Nygaard, `knut.nygaard@nav.no`
-* Martin Solheim, `martin.solheim@nav.no`
-* Kevin Sillerud, `kevin.sillerud@nav.no`
 * Joakim Kartveit, `joakim.kartveit@nav.no`
+* Andreas Nilsen, `andreas.nilsen@nav.no`
+* Sebastian Knudsen, `sebastian.knudsen@nav.no`
+* Tia Firing, `tia.firing@nav.no`
+* Jonas Henie, `jonas.henie@nav.no`
+* Mathias Hellevang, `mathias.hellevang@nav.no`
+* Kent Stefan Daleng, `Kent.Stefan.Daleng@nav.no`
+* Håvard Stigen Andersen, `Havard.Stigen.Andersen@nav.no`
+* Bjørn Inge Kulsveen, `Bjorn.Inge.Kulsveen@nav.no`
 
 ### For NAV employees
-We are also available on the slack channel #team-sykmelding or #flex for internal communication.
+We are available at the Slack channel #team-sykmelding or #flex
