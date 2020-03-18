@@ -92,13 +92,13 @@
         .infoblock {
         }
     </style>
-    <title>{{#eq sykmelding.avsenderSystem.navn "Egenmeldt Sykdom"}}Egenmeldt {{/eq}} {{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}Sykmelding for {{ pasient.fornavn }}{{#if pasient.mellomnavn }} {{pasient.mellomnavn}}{{/if}} {{pasient.etternavn}}</title>
+    <title>{{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}Egenmeldt {{/eq}} {{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}Sykmelding for {{ pasient.fornavn }}{{#if pasient.mellomnavn }} {{pasient.mellomnavn}}{{/if}} {{pasient.etternavn}}</title>
 </head>
 <body>
 <table class="header">
     <thead>
     <tr>
-        <td class="tr75">{{#eq sykmelding.avsenderSystem.navn "Egenmeldt Sykdom"}}EGENMELDT {{/eq}} {{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}SYKMELDING</td>
+        <td class="tr75">{{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}EGENMELDT {{/eq}} {{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}SYKMELDING</td>
         <td>NAVs eksemplar</td>
     </tr>
     <tr>
