@@ -98,7 +98,7 @@
 <table class="header">
     <thead>
     <tr>
-        <td class="tr75">{{#eq sykmelding.avsenderSystem.navn "Papirsykmelding"}}Papirsykmelding {{/eq}} {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}EGENMELDT {{/eq}} {{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}SYKMELDING</td>
+        <td class="tr75">{{#eq sykmelding.avsenderSystem.navn "Papirsykmelding"}}Papirsykmelding {{/eq}} {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}EGENMELDING FOR SELVSTENDIG NÆRINGSDRIVENDE ELLER FRILANSER {{/eq}} {{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}SYKMELDING</td>
         <td>NAVs eksemplar</td>
     </tr>
     <tr>
@@ -162,9 +162,15 @@
         <td>{{ pasient.tlfNummer }}</td>
     </tr>
     <tr>
-        <td><h4>1.4</h4></td>
-        <td>Navn på pasientens fastlege</td>
-        <td>{{ sykmelding.navnFastlege }}</td>
+        {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}
+            <td></td>
+            <td></td>
+            <td></td>
+        {{else}}
+            <td><h4>1.4</h4></td>
+            <td>Navn på pasientens fastlege</td>
+            <td>{{ sykmelding.navnFastlege }}</td>
+        {{/eq}}
     </tr>
     </tbody>
 </table>
@@ -194,7 +200,13 @@
     </tr>
     <tr>
         <td><h4>2.3</h4></td>
-        <td>Yrke/stilling for denne sykmeldingen</td>
+        <td>
+        {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}
+            Yrke /stilling for denne egenmeldingen
+        {{else}}
+            Yrke/stilling for denne sykmeldingen
+        {{/eq}}
+        </td>
         <td>{{ sykmelding.arbeidsgiver.yrkesbetegnelse }}</td>
     </tr>
     <tr>
@@ -781,7 +793,13 @@
         {{#if sykmelding.kontaktMedPasient.kontaktDato}}
         <tr>
             <td><h4>11.1</h4></td>
-            <td><h4>Dato for dokumenterbar kontakt med pasienten:</h4></td>
+            <td><h4>
+                {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}
+                    Dato for når egenmeldingen kunne vært sendt
+                {{else}}
+                    Dato for dokumenterbar kontakt med pasienten
+                {{/eq}}
+            </h4></td>
             <td>{{ sykmelding.kontaktMedPasient.kontaktDato }}</td>
         </tr>
         {{/if}}
@@ -802,6 +820,10 @@
     </table>
 {{/if}}
 
+
+{{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}
+
+{{else}}
 <table>
     <thead>
     <tr>
@@ -857,6 +879,7 @@
     </tr>
     </tbody>
 </table>
+{{/eq}}
 
 {{#eq validationResult.status "INVALID" }}
 <table>
