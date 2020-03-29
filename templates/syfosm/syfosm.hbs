@@ -839,7 +839,7 @@
     <tr>
         <td></td>
         <td colspan="2">
-            {{ sykmelding.behandler.adresse.gate }}, {{ sykmelding.behandler.adresse.postnummer }} {{ sykmelding.behandler.adresse.kommune }}
+            {{ sykmelding.behandler.adresse.gate }}{{#if sykmelding.behandler.adresse.gate}},{{/if}} {{ sykmelding.behandler.adresse.postnummer }} {{ sykmelding.behandler.adresse.kommune }}
         </td>
     </tr>
     <tr>
