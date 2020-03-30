@@ -784,6 +784,9 @@
     </table>
 {{/if}}
 
+{{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}
+
+{{else}}
 {{#if sykmelding.kontaktMedPasient}}
     <table>
         <thead>
@@ -797,13 +800,7 @@
         {{#if sykmelding.kontaktMedPasient.kontaktDato}}
         <tr>
             <td><h4>11.1</h4></td>
-            <td><h4>
-                {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}
-                    Dato for når egenmeldingen ble registrert hos NAV
-                {{else}}
-                    Dato for dokumenterbar kontakt med pasienten
-                {{/eq}}
-            </h4></td>
+            <td><h4>Dato for dokumenterbar kontakt med pasienten</h4></td>
             <td>{{ sykmelding.kontaktMedPasient.kontaktDato }}</td>
         </tr>
         {{/if}}
@@ -823,11 +820,9 @@
         </tbody>
     </table>
 {{/if}}
+{{/eq}}
 
 
-{{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}
-
-{{else}}
 <table>
     <thead>
     <tr>
@@ -839,7 +834,13 @@
     <tbody>
     <tr>
         <td><h4>12.1</h4></td>
-        <td><h4>Pasienten er kjent eller har vist legitimasjon</h4></td>
+        <td><h4>
+            {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}
+                Dato for når egenmeldingen ble registrert hos NAV
+            {{else}}
+                Pasienten er kjent eller har vist legitimasjon
+            {{/eq}}
+        </h4></td>
         <td>{{iso_to_nor_date sykmelding.behandletTidspunkt }}</td>
     </tr>
     <tr>
@@ -883,7 +884,6 @@
     </tr>
     </tbody>
 </table>
-{{/eq}}
 
 {{#eq validationResult.status "INVALID" }}
 <table>
