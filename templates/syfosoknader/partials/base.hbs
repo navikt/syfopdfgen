@@ -39,11 +39,13 @@
                         </p>
                     {{/if}}
                 </div>
-                {{#if egenmeldtSykmelding }}
-                  <p class="header__tittel">
-                    Denne søknaden hører til en egenmeldt sykmelding
-                  </p>
-                {{/if}}
+                {{#eq soknadstype "SELVSTENDIGE_OG_FRILANSERE"}}
+                  {{#if egenmeldtSykmelding }}
+                    <p class="header__tittel">
+                      Denne søknaden hører til en egenmelding for selvstendig næringsdrivende eller frilanser
+                    </p>
+                  {{/if}}
+                {{/eq}}
                 {{#eq avsendertype "SYSTEM" }}
                   <p class="header__tittel">
                     Denne søknaden er autogenerert på grunn av et registrert dødsfall
