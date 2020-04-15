@@ -235,12 +235,12 @@
         </tr>
     {{/if}}
     <tr>
-        <td><h4>2.3</h4></td>
+        <td><h4>2.4</h4></td>
         <td><h4>Helt arbeidsufør f.o.m.</h4></td>
         <td>{{ iso_to_nor_date legeerklaering.sykdomsopplysninger.arbeidsuforFra }}</td>
     </tr>
     <tr>
-        <td><h4>2.4</h4></td>
+        <td><h4>2.5</h4></td>
         <td>
         <h4>Sykehistorie med symptomer og behandling</h4>
         {{ legeerklaering.sykdomsopplysninger.sykdomshistorie }}
@@ -248,15 +248,15 @@
         <td></td>
     </tr>
     <tr>
-        <td><h4>2.5</h4></td>
+        <td><h4>2.6</h4></td>
         <td><h4>Status presens (angi dato). Resultat av relevante undersøkelser.</h4></td>
         <td>{{ legeerklaering.sykdomsopplysninger.statusPresens }}</td>
     </tr>
     <tr>
-        <td><h4>2.6</h4></td>
+        <td><h4>2.7</h4></td>
         <td><h4>Bør NAV-kontoret vurdere om det er en:</h4></td>
         <td>
-            <h4>2.6.1 Yrkesskade/Yrkessykdom</h4>
+            <h4>2.7.1 Yrkesskade/Yrkessykdom</h4>
             {{#if legeerklaering.sykdomsopplysninger.borNavKontoretVurdereOmDetErEnYrkesskade }}JA{{/if}}
             {{#unless legeerklaering.sykdomsopplysninger.borNavKontoretVurdereOmDetErEnYrkesskade}}NEI{{/unless}}
         </td>
