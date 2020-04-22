@@ -28,7 +28,7 @@ jobs:
           CLUSTER: dev-fss
           RESOURCE: naiserator.yaml
       - name: deploy to prod-fss
-      uses: nais/deploy/actions/deploy@master
+        uses: nais/deploy/actions/deploy@master
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: prod-fss
