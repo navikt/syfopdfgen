@@ -1,0 +1,36 @@
+{
+  "dialogmelding": {
+    "id": "d5029a23-2a84-43f9-a16a-5492c36afd9c",
+    "dialogmeldingNotat": null,
+    "dialogmeldingSvar": {
+      "teamakode": {
+        "dn": "Henvendelse om sykefraværsoppfølging",
+        "ot": "Benyttes når henvendelsen gjelder en pasient som er sykmeldt, evt henvendelser knyttet til et tidligere sykefraværstilfelle.",
+        "s": "2.16.578.1.12.4.1.1.8128",
+        "v": "1"
+      },
+      "tekstNotatInnhold": "Jeg er klar 12.30. Mvh, Lege legsesn"
+    },
+    "dialogmeldingForesporsel": null,
+    "navnHelsepersonell": "Per Hansen",
+    "signaturDato": "2017-11-05T00:00:00"
+  },
+  "validationResult": {
+    "status": "INVALID",
+    "ruleHits": [
+      {
+        "ruleName": "PASIENT_YNGRE_ENN_13",
+        "messageForSender": "Pasienten er under 13 år. Sykmelding kan ikke benyttes.",
+        "messageForUser": "Pasienten er under 13 år. Sykmelding kan ikke benyttes.",
+        "ruleStatus": "INVALID"
+      },
+      {
+        "ruleName": "PASIENT_ELDRE_ENN_70",
+        "messageForSender": "Pasienten er over 70 år. Sykmelding kan ikke benyttes.",
+        "messageForUser": "Sykmelding kan ikke benyttes etter at du har fylt 70 år",
+        "ruleStatus": "INVALID"
+      }
+    ]
+  },
+  "pasientFnr": "3214141414"
+}
