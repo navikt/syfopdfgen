@@ -140,95 +140,95 @@
 </table>
 
 
-{{#if dialogmelding.dialogmeldingSvar }}
+{{#if dialogmelding.innkallingMoterespons }}
 <table class="infoblock">
     <thead>
     <tr>
-        <td class="tr25"><h4>Dialogmelding Svar</h4></td>
+        <td class="tr25"><h4>Dialogmelding innkalling mote respons</h4></td>
         <td class="tr65"></td>
     </tr>
     </thead>
     <tbody>
     <tr>
         <td><h4>Tekst notat innhold</h4></td>
-        <td>{{ dialogmelding.dialogmeldingSvar.tekstNotatInnhold }}</td>
+        <td>{{ dialogmelding.innkallingMoterespons.tekstNotatInnhold }}</td>
     </tr>
 </table>
 {{/if}}
 
-{{#if dialogmelding.dialogmeldingNotat }}
+{{#if dialogmelding.foresporselFraSaksbehandlerForesporselSvar }}
     <table class="infoblock">
         <thead>
         <tr>
-            <td class="tr25"><h4>Dialogmelding Notat</h4></td>
+            <td class="tr25"><h4>Dialogmelding foresporsel fra saksbehandler foresporsel svar</h4></td>
             <td class="tr65"></td>
         </tr>
         </thead>
         <tbody>
         <tr>
             <td><h4>Type</h4></td>
-            <td>{{ dialogmelding.dialogmeldingNotat.teamakode.dn }}</td>
+            <td>{{ dialogmelding.foresporselFraSaksbehandlerForesporselSvar.teamakode.dn }}</td>
         </tr>
 
         <tr>
             <td><h4>Dokumentreferanse</h4></td>
-            <td>{{ dialogmelding.dialogmeldingNotat.dokIdNotat }}</td>
+            <td>{{ dialogmelding.foresporselFraSaksbehandlerForesporselSvar.dokIdNotat }}</td>
         </tr>
         <tr>
             <td><h4>Dato notat</h4></td>
-            <td>{{iso_to_date dialogmelding.dialogmeldingNotat.datoNotat }}</td>
+            <td>{{iso_to_nor_date dialogmelding.foresporselFraSaksbehandlerForesporselSvar.datoNotat }}</td>
         </tr>
 
         <tr>
             <td><h4>Tekst notat innhold</h4></td>
-            <td>{{ dialogmelding.dialogmeldingNotat.tekstNotatInnhold }}</td>
+            <td>{{ dialogmelding.foresporselFraSaksbehandlerForesporselSvar.tekstNotatInnhold }}</td>
         </tr>
     </table>
 {{/if}}
 
-{{#if dialogmelding.dialogmeldingForesporsel }}
+{{#if dialogmelding.henvendelseFraLegeHenvendelse }}
     <table class="infoblock">
         <thead>
         <tr>
-            <td class="tr30"><h4>Dialogmelding Foresporsel</h4></td>
+            <td class="tr30"><h4>Dialogmelding henvendelse fra lege henvendelse</h4></td>
             <td class="tr65"></td>
         </tr>
         </thead>
         <tbody>
         <tr>
             <td><h4>Type</h4></td>
-            <td>{{ dialogmelding.dialogmeldingForesporsel.teamakode.dn }}</td>
+            <td>{{ dialogmelding.henvendelseFraLegeHenvendelse.teamakode.dn }}</td>
         </tr>
 
         <tr>
             <td><h4>Dokumentreferanse</h4></td>
-            <td>{{ dialogmelding.dialogmeldingForesporsel.dokIdNotat }}</td>
+            <td>{{ dialogmelding.henvendelseFraLegeHenvendelse.dokIdNotat }}</td>
         </tr>
 
         <tr>
             <td><h4>Foresporsel type</h4></td>
-            <td>{{ dialogmelding.dialogmeldingForesporsel.foresporsel.typeForesp.dn }}</td>
+            <td>{{ dialogmelding.henvendelseFraLegeHenvendelse.foresporsel.typeForesp.dn }}</td>
         </tr>
 
         <tr>
             <td><h4>Sporsmal</h4></td>
-            <td>{{ dialogmelding.dialogmeldingForesporsel.foresporsel.sporsmal }}</td>
+            <td>{{ dialogmelding.henvendelseFraLegeHenvendelse.foresporsel.sporsmal }}</td>
         </tr>
 
         <tr>
             <td><h4>Dokumentreferanse forespørsel</h4></td>
-            <td>{{ dialogmelding.dialogmeldingForesporsel.foresporsel.dokIdForesp }}</td>
+            <td>{{ dialogmelding.henvendelseFraLegeHenvendelse.foresporsel.dokIdForesp }}</td>
         </tr>
 
         <tr>
             <td><h4>Saksbehandler</h4></td>
-            <td>{{ dialogmelding.dialogmeldingForesporsel.foresporsel.rollerRelatertNotat.person.givenName }}
-                {{ dialogmelding.dialogmeldingForesporsel.foresporsel.rollerRelatertNotat.person.familyName }} </td>
+            <td>{{ dialogmelding.henvendelseFraLegeHenvendelse.foresporsel.rollerRelatertNotat.person.givenName }}
+                {{ dialogmelding.henvendelseFraLegeHenvendelse.foresporsel.rollerRelatertNotat.person.familyName }} </td>
         </tr>
 
         <tr>
             <td><h4>Tekst notat innhold</h4></td>
-            <td>{{ dialogmelding.dialogmeldingForesporsel.tekstNotatInnhold }}</td>
+            <td>{{ dialogmelding.henvendelseFraLegeHenvendelse.tekstNotatInnhold }}</td>
         </tr>
     </table>
 {{/if}}
