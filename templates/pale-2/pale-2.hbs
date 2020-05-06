@@ -312,28 +312,28 @@
 
         <tr>
             <td><h4>3.3</h4></td>
-            <td><h4>Utredningsplan. Oppgi planlagte undersøkelser og tidspunkt/varighet</h4></td>
-            <td>{{ legeerklaering.plan.utredningsplan }}</td>
+            <td colspan="3"><h4>Utredningsplan. Oppgi planlagte undersøkelser og tidspunkt/varighet</h4>
+            {{ legeerklaering.plan.utredningsplan }}</td>
         </tr>
         <tr>
             <td><h4>3.4</h4></td>
-            <td><h4>Behandlingsplan. Oppgi planlagt behandling og tidspunkt/varighet</h4></td>
-            <td>{{ legeerklaering.plan.behandlingsplan }}</td>
+            <td colspan="3"><h4>Behandlingsplan. Oppgi planlagt behandling og tidspunkt/varighet</h4>
+            {{ legeerklaering.plan.behandlingsplan }}</td>
         </tr>
         <tr>
             <td><h4>3.5</h4></td>
-            <td><h4>Ny vurdering av tidligere utrednings-/behandlingsplan</h4></td>
-            <td>{{ legeerklaering.plan.vurderingAvTidligerePlan }}</td>
+            <td colspan="3"><h4>Ny vurdering av tidligere utrednings-/behandlingsplan</h4>
+            {{ legeerklaering.plan.vurderingAvTidligerePlan }}</td>
         </tr>
         <tr>
             <td><h4>3.6</h4></td>
-            <td><h4>Når er det hensiktsmessig, i henhold til utrednings og behandlingsopplegget at NAV-kontoret ber om nye legeopplysninger?</h4></td>
-            <td>{{ legeerklaering.plan.narSporreOmNyeLegeopplysninger }}</td>
+            <td colspan="3"><h4>Når er det hensiktsmessig, i henhold til utrednings og behandlingsopplegget at NAV-kontoret ber om nye legeopplysninger?</h4>
+            {{ legeerklaering.plan.narSporreOmNyeLegeopplysninger }}</td>
         </tr>
         <tr>
             <td><h4>3.7</h4></td>
-            <td><h4>Hvis videre behandling ikke er aktuell, gi begrunnelse</h4></td>
-            <td>{{ legeerklaering.plan.videreBehandlingIkkeAktueltGrunn }}</td>
+            <td colspan="3"><h4>Hvis videre behandling ikke er aktuell, gi begrunnelse</h4>
+            {{ legeerklaering.plan.videreBehandlingIkkeAktueltGrunn }}</td>
         </tr>
     </tbody>
 </table>
@@ -406,7 +406,7 @@
     <thead>
     <tr>
         <td class="tr5"><h4>5</h4></td>
-        <td class="tr40"><h4>Medisinsk begrunnet vurdering av funksjons- og arbeidsevne</h4></td>
+        <td class="tr35"><h4>Medisinsk begrunnet vurdering av funksjons- og arbeidsevne</h4></td>
         <td class="tr20"></td>
         <td class="tr20"></td>
     </tr>
@@ -414,16 +414,16 @@
     <tbody>
     <tr>
         <td><h4>5.1</h4></td>
-        <td><h4>Beskriv hvordan funksjonsevnen generelt er nedsatt på grunn av sykdom</h4></td>
-        {{ legeerklaering.funksjonsOgArbeidsevne.vurderingFunksjonsevne }}
+        <td colspan="3"><h4>Beskriv hvordan funksjonsevnen generelt er nedsatt på grunn av sykdom</h4>
+        {{ legeerklaering.funksjonsOgArbeidsevne.vurderingFunksjonsevne }}</td>
     </tr>
     <tr>
         <td><h4>5.2</h4></td>
-        <td><h4>Pasienten er:</h4></td>
+        <td colspan="3"><h4>Pasienten er:</h4>
         {{#if legeerklaering.funksjonsOgArbeidsevne.inntektsgivendeArbeid }}i intektsgivende arbeid{{/if}}
         {{#if legeerklaering.funksjonsOgArbeidsevne.hjemmearbeidende }}hjemmearbeidende{{/if}}
         {{#if legeerklaering.funksjonsOgArbeidsevne.student }}student{{/if}}
-        {{#if legeerklaering.funksjonsOgArbeidsevne.annetArbeid}}{{legeerklaering.funksjonsOgArbeidsevne.annetArbeid}}{{/if}}
+        {{#if legeerklaering.funksjonsOgArbeidsevne.annetArbeid}}{{legeerklaering.funksjonsOgArbeidsevne.annetArbeid}}{{/if}}</td>
     </tr>
     <tr>
         <td><h4>5.3</h4></td>
@@ -520,7 +520,6 @@
     <tr>
         <td class="tr5">7</td>
         <td class="tr50">Årsaksammenheng</td>
-        <td class="tr15"></td>
     </tr>
     </thead>
     <tbody>
@@ -539,7 +538,6 @@
     <tr>
         <td class="tr5">8</td>
         <td class="tr50">Andre opplysninger</td>
-        <td class="tr15"></td>
     </tr>
     </thead>
     <tbody>
@@ -610,9 +608,8 @@
 <table>
     <thead>
     <tr>
-        <td class="tr30">11</td>
+        <td class="tr20">11</td>
         <td class="tr30">Legens underskrift mv.</td>
-        <td class="tr15"></td>
     </tr>
     </thead>
     <tbody>
