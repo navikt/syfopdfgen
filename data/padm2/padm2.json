@@ -1,6 +1,6 @@
 {
   "dialogmelding": {
-    "id": "f6a6ca72-4829-46c9-9b4f-37852e604cd0",
+    "id": "c8712c30-ee63-4ab8-9508-3f73a6207a89",
     "innkallingMoterespons": {
       "teamakode": {
         "kodeverkOID": "2.16.578.1.12.4.1.1.8126",
@@ -28,7 +28,8 @@
           "person": {
             "givenName": "jon",
             "familyName": "Person"
-          }
+          },
+          "helsepersonell": null
         }
       }
     },
@@ -43,7 +44,7 @@
       },
       "tekstNotatInnhold": "Pasieten har masse info her",
       "dokIdNotat": "OD1812186729156",
-      "datoNotat": "2020-05-05T09:02:32.985989"
+      "datoNotat": "2020-05-19T08:24:07.139419"
     },
     "henvendelseFraLegeHenvendelse": {
       "teamakode": {
@@ -72,9 +73,14 @@
           "person": {
             "givenName": "jon",
             "familyName": "Person"
+          },
+          "helsepersonell": {
+            "givenName": "helse",
+            "familyName": "Person"
           }
         }
-      }
+      },
+      "rollerRelatertNotat": null
     },
     "navnHelsepersonell": "Per Hansen",
     "signaturDato": "2017-11-05T00:00:00"
