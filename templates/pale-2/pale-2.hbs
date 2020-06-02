@@ -589,13 +589,10 @@
     <tbody>
     <tr>
         <td><h4>10.1 Er det noe i legeerklæringen som pasienten ikke bør få vite av medisinske grunner?</h4></td>
-        {{#if legeerklaering.pasientenBurdeIkkeVite}}JA{{/if}}
+        {{#if legeerklaering.pasientenBurdeIkkeVite}}
+            {{ legeerklaering.pasientenBurdeIkkeVite }}
+        {{/if}}
         {{#unless legeerklaering.pasientenBurdeIkkeVite}}NEI{{/unless}}
-    </tr>
-    <tr>
-        <td><h4>10.2 Hvis Ja, oppgi hva pasienten ikke bør vite</h4></td>
-        {{ legeerklaering.pasientenBurdeIkkeVite }}
-        {{#unless legeerklaering.kontakt.onskesKopiAvVedtak}}NEI{{/unless}}
     </tr>
     </tbody>
 </table>
