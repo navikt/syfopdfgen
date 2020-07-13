@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8"/>
+    <style>
+        @page {
+            margin: 1cm;
+        }
+        * {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+        }
+
+        td {
+            font-size: 0.9em;
+        }
+
+        table {
+            width: 100%;
+            border: 1px black solid;
+            margin-bottom: 0.5cm;
+        }
+
+        td {
+            vertical-align: top;
+            word-wrap: break-word;
+        }
+
+        table thead {
+            background-color: lightblue;
+        }
+
+        table thead td {
+            border: none;
+        }
+
+        td h5 {
+            margin: 0;
+        }
+
+        td h4 {
+            margin: 0;
+        }
+
+        td h3 {
+            margin: 0;
+        }
+
+        td p {
+            margin: 0;
+        }
+
+        body {
+            page-break-inside: avoid;
+        }
+
+        .header {
+
+        }
+
+        .tr5 {
+            width: 5%;
+        }
+
+        .tr10 {
+            width: 10%;
+        }
+
+        .tr15 {
+            width: 15%;
+        }
+
+        .tr20 {
+            width: 20%;
+        }
+
+        .tr25 {
+            width: 25%;
+        }
+
+        .tr30 {
+            width: 30%;
+        }
+
+        .tr60 {
+            width: 60%;
+        }
+
+        .tr65 {
+            width: 65%;
+        }
+
+        .tr75 {
+            width: 75%;
+        }
+
+        .infoblock {
+        }
+    </style>
+    <title>{{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}Dialogmleding </title>
+</head>
+<body>
+<table class="header">
+    <thead>
+    <tr>
+        <td class="tr75">{{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}DIALOGMELDING</td>
+    </tr>
+    </thead>
+</table>
+
+<table class="infoblock">
+    <thead>
+    <tr>
+        <td class="tr25"><h4>Dialogmelding Avsender</h4></td>
+        <td class="tr65"></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><h4>Helsepersonell Navn</h4></td>
+        <td>{{ dialogmelding.navnHelsepersonell }}</td>
+    </tr>
+    <tr>
+        <td><h4>SignaturDato Navn</h4></td>
+        <td>{{iso_to_nor_date dialogmelding.signaturDato }}</td>
+    </tr>
+</table>
+
+<table class="infoblock">
+    <thead>
+    <tr>
+        <td class="tr25"><h4>Dialogmelding Mottaker</h4></td>
+        <td class="tr65"></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><h4>Pasient fødselsnummer</h4></td>
+        <td>{{ pasientFnr }}</td>
+    </tr>
+</table>
+
+
+{{#if dialogmelding.innkallingMoterespons }}
+<table class="infoblock">
+    <thead>
+    <tr>
+        <td class="tr25"><h4>Dialogmelding innkalling mote respons</h4></td>
+        <td class="tr65"></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><h4>Tekst notat innhold</h4></td>
+        <td>{{ dialogmelding.innkallingMoterespons.tekstNotatInnhold }}</td>
+    </tr>
+</table>
+{{/if}}
+
+{{#if dialogmelding.foresporselFraSaksbehandlerForesporselSvar }}
+    <table class="infoblock">
+        <thead>
+        <tr>
+            <td class="tr25"><h4>Dialogmelding foresporsel fra saksbehandler foresporsel svar</h4></td>
+            <td class="tr65"></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><h4>Type</h4></td>
+            <td>{{ dialogmelding.foresporselFraSaksbehandlerForesporselSvar.teamakode.dn }}</td>
+        </tr>
+
+        <tr>
+            <td><h4>Dokumentreferanse</h4></td>
+            <td>{{ dialogmelding.foresporselFraSaksbehandlerForesporselSvar.dokIdNotat }}</td>
+        </tr>
+        <tr>
+            <td><h4>Dato notat</h4></td>
+            <td>{{iso_to_nor_date dialogmelding.foresporselFraSaksbehandlerForesporselSvar.datoNotat }}</td>
+        </tr>
+
+        <tr>
+            <td><h4>Tekst notat innhold</h4></td>
+            <td>{{ dialogmelding.foresporselFraSaksbehandlerForesporselSvar.tekstNotatInnhold }}</td>
+        </tr>
+    </table>
+{{/if}}
+
+{{#if dialogmelding.henvendelseFraLegeHenvendelse }}
+    <table class="infoblock">
+        <thead>
+        <tr>
+            <td class="tr30"><h4>Dialogmelding henvendelse fra lege henvendelse</h4></td>
+            <td class="tr65"></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><h4>Type</h4></td>
+            <td>{{ dialogmelding.henvendelseFraLegeHenvendelse.teamakode.dn }}</td>
+        </tr>
+
+        <tr>
+            <td><h4>Dokumentreferanse</h4></td>
+            <td>{{ dialogmelding.henvendelseFraLegeHenvendelse.dokIdNotat }}</td>
+        </tr>
+
+        <tr>
+            <td><h4>Foresporsel type</h4></td>
+            <td>{{ dialogmelding.henvendelseFraLegeHenvendelse.foresporsel.typeForesp.dn }}</td>
+        </tr>
+
+        <tr>
+            <td><h4>Sporsmal</h4></td>
+            <td>{{ dialogmelding.henvendelseFraLegeHenvendelse.foresporsel.sporsmal }}</td>
+        </tr>
+
+        <tr>
+            <td><h4>Dokumentreferanse forespørsel</h4></td>
+            <td>{{ dialogmelding.henvendelseFraLegeHenvendelse.foresporsel.dokIdForesp }}</td>
+        </tr>
+
+        <tr>
+            <td><h4>Saksbehandler</h4></td>
+            <td>{{ dialogmelding.henvendelseFraLegeHenvendelse.foresporsel.rollerRelatertNotat.person.givenName }}
+                {{ dialogmelding.henvendelseFraLegeHenvendelse.foresporsel.rollerRelatertNotat.person.familyName }} </td>
+        </tr>
+
+        <tr>
+            <td><h4>Tekst notat innhold</h4></td>
+            <td>{{ dialogmelding.henvendelseFraLegeHenvendelse.tekstNotatInnhold }}</td>
+        </tr>
+    </table>
+{{/if}}
+
+
+{{#eq validationResult.status "INVALID" }}
+<table>
+    <thead>
+    <tr>
+        <td class="tr60"><h4>Begrunnelse for avvising</h4></td>
+    </tr>
+    </thead>
+    <tr>
+        <td>
+            <ul>{{#each validationResult.ruleHits}}
+                <li>{{messageForSender}}</li>
+                {{/each}}
+            </ul>
+        </td>
+    </tr>
+    </tbody>
+</table>
+{{/eq}}
+</body>
+</html>

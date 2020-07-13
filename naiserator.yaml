@@ -4,9 +4,9 @@ metadata:
   name: syfopdfgen
   namespace: default
   labels:
-    team: {{team}}
+    team: teamsykefravr
 spec:
-  image: "docker.pkg.github.com/navikt/syfopdfgen:{{tag}}"
+  image: {{ image }}
   port: 8080
   replicas:
     min: 1
