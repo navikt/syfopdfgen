@@ -243,14 +243,14 @@
         <td><h4>2.5</h4></td>
         <td colspan="3">
             <h4>Sykehistorie med symptomer og behandling</h4>
-            {{ legeerklaering.sykdomsopplysninger.sykdomshistorie }}
+            {{ breaklines legeerklaering.sykdomsopplysninger.sykdomshistorie }}
         </td>
     </tr>
     <tr>
         <td><h4>2.6</h4></td>
         <td colspan="3">
             <h4>Status presens (angi dato). Resultat av relevante undersøkelser.</h4>
-            {{ legeerklaering.sykdomsopplysninger.statusPresens }}
+            {{ breaklines legeerklaering.sykdomsopplysninger.statusPresens }}
         </td>
     </tr>
     <tr>
@@ -280,7 +280,7 @@
             <td><h4>3.1</h4></td>
             <td>
                 <h4>Er pasienten henvist til Utreding</h4>
-                {{ legeerklaering.plan.utredning.tekst }}
+                {{ breaklines legeerklaering.plan.utredning.tekst }}
             </td>
             <td>
                 <h4>3.1.1 Dato for henvisn.</h4>
@@ -313,27 +313,27 @@
         <tr>
             <td><h4>3.3</h4></td>
             <td colspan="3"><h4>Utredningsplan. Oppgi planlagte undersøkelser og tidspunkt/varighet</h4>
-            {{ legeerklaering.plan.utredningsplan }}</td>
+            {{ breaklines legeerklaering.plan.utredningsplan }}</td>
         </tr>
         <tr>
             <td><h4>3.4</h4></td>
             <td colspan="3"><h4>Behandlingsplan. Oppgi planlagt behandling og tidspunkt/varighet</h4>
-            {{ legeerklaering.plan.behandlingsplan }}</td>
+            {{ breaklines legeerklaering.plan.behandlingsplan }}</td>
         </tr>
         <tr>
             <td><h4>3.5</h4></td>
             <td colspan="3"><h4>Ny vurdering av tidligere utrednings-/behandlingsplan</h4>
-            {{ legeerklaering.plan.vurderingAvTidligerePlan }}</td>
+            {{ breaklines legeerklaering.plan.vurderingAvTidligerePlan }}</td>
         </tr>
         <tr>
             <td><h4>3.6</h4></td>
             <td colspan="3"><h4>Når er det hensiktsmessig, i henhold til utrednings og behandlingsopplegget at NAV-kontoret ber om nye legeopplysninger?</h4>
-            {{ legeerklaering.plan.narSporreOmNyeLegeopplysninger }}</td>
+            {{ breaklines legeerklaering.plan.narSporreOmNyeLegeopplysninger }}</td>
         </tr>
         <tr>
             <td><h4>3.7</h4></td>
             <td colspan="3"><h4>Hvis videre behandling ikke er aktuell, gi begrunnelse</h4>
-            {{ legeerklaering.plan.videreBehandlingIkkeAktueltGrunn }}</td>
+            {{ breaklines legeerklaering.plan.videreBehandlingIkkeAktueltGrunn }}</td>
         </tr>
     </tbody>
 </table>
@@ -415,7 +415,7 @@
     <tr>
         <td><h4>5.1</h4></td>
         <td colspan="3"><h4>Beskriv hvordan funksjonsevnen generelt er nedsatt på grunn av sykdom</h4>
-        {{ legeerklaering.funksjonsOgArbeidsevne.vurderingFunksjonsevne }}</td>
+        {{ breaklines legeerklaering.funksjonsOgArbeidsevne.vurderingFunksjonsevne }}</td>
     </tr>
     <tr>
         <td><h4>5.2</h4></td>
@@ -428,7 +428,7 @@
     <tr>
         <td><h4>5.3</h4></td>
         <td><h4>Beskriv kort type arbeid og hvilke krav som stilles</h4></td>
-        <td>{{ funksjonsOgArbeidsevne.kravTilArbeid }}</td>
+        <td>{{ breaklines funksjonsOgArbeidsevne.kravTilArbeid }}</td>
     </tr>
     <tr>
         <td><h4>5.4</h4></td>
@@ -527,7 +527,7 @@
         <td><h4>7.1</h4></td>
         <td>
             <h4>Anslå hvor stor betydning funksjonsnedsettelsen har for at arbeidsevnen er nedsatt</h4>
-            {{ legeerklaering.arsakssammenheng }}
+            {{ breaklines legeerklaering.arsakssammenheng }}
         </td>
     </tr>
     </tbody>
@@ -544,7 +544,7 @@
     <tr>
         <td><h4>8.1</h4></td>
         <td>
-            {{ legeerklaering.andreOpplysninger }}
+            {{ breaklines legeerklaering.andreOpplysninger }}
         </td>
     </tr>
     </tbody>
