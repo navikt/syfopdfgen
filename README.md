@@ -48,7 +48,7 @@ templates will look like in production.
 * Tia Firing, `tia.firing@nav.no`
 * Jonas Henie, `jonas.henie@nav.no`
 * Mathias Hellevang, `mathias.hellevang@nav.no`
-* Kent Stefan Daleng, `Kent.Stefan.Daleng@nav.no`
+* Kent Daleng, `Kent.Daleng@nav.no`
 * Håvard Stigen Andersen, `Havard.Stigen.Andersen@nav.no`
 * Bjørn Inge Kulsveen, `Bjorn.Inge.Kulsveen@nav.no`
 
