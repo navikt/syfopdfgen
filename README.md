@@ -48,9 +48,7 @@ templates will look like in production.
 * Tia Firing, `tia.firing@nav.no`
 * Jonas Henie, `jonas.henie@nav.no`
 * Mathias Hellevang, `mathias.hellevang@nav.no`
-* Kent Daleng, `Kent.Daleng@nav.no`
-* Håvard Stigen Andersen, `Havard.Stigen.Andersen@nav.no`
-* Bjørn Inge Kulsveen, `Bjorn.Inge.Kulsveen@nav.no`
+
 
 ### For NAV employees
-We are available at the Slack channel #team-sykmelding or #flex
+We are available at the Slack channel #team-sykmelding
