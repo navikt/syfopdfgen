@@ -95,12 +95,12 @@
     <title>
         {{#each merknader}}
             {{#eq type "UGYLDIG_TILBAKEDATERING" }}
-                AVSLÅTT&nbsp;
+                AVSLÅTT
             {{/eq}}
         {{/each}}
-        {{#eq sykmelding.avsenderSystem.navn "Papirsykmelding"}}Papir-{{/eq}}
+        {{#eq sykmelding.avsenderSystem.navn "Papirsykmelding"}}Papirsykmelding {{/eq}}
         {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}Egenmeldt {{/eq}}
-        {{#eq validationResult.status "INVALID" }}AVVIST {{/eq}} Sykmelding for {{ pasient.fornavn }} {{#if pasient.mellomnavn }} {{pasient.mellomnavn}}{{/if}} {{pasient.etternavn}}</title>
+        {{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}Sykmelding for {{ pasient.fornavn }} {{#if pasient.mellomnavn }} {{pasient.mellomnavn}}{{/if}} {{pasient.etternavn}}</title>
 </head>
 <body>
 <table class="header">
