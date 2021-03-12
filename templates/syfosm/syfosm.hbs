@@ -933,6 +933,36 @@
 </table>
 {{/eq}}
 
+{{#if merknader }}
+    <table>
+        <thead>
+        <tr>
+            <td><h4>-</h4></td>
+            <td><h4>Merknader</h4></td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+            {{#each merknader}}
+                {{#eq type "UGYLDIG_TILBAKEDATERING" }}
+                    <tr>
+                        <td></td>
+                        <td><h4>Avslått</h4></td>
+                        <td>Sykmeldingen er registrert med merknad om avslag pga. ugyldig tilbakedatering.</td>
+                    </tr>
+                {{/eq}}
+                {{#eq type "TILBAKEDATERING_KREVER_FLERE_OPPLYSNINGER" }}
+                    <tr>
+                        <td></td>
+                        <td><h4>Krever flere opplysninger</h4></td>
+                        <td>Sykmeldingen er registrert med merknad om at NAV trenger flere opplysninger for å vurdere om den gir rett på sykepenger for den tilbakedaterte perioden.</td>
+                    </tr>
+                {{/eq}}
+            {{/each}}
+        </tbody>
+    </table>
+{{/if}}
+
 <table class="footer">
     <thead>
     <tr>
