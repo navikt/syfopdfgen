@@ -92,13 +92,27 @@
         .infoblock {
         }
     </style>
-    <title>{{#eq sykmelding.avsenderSystem.navn "Papirsykmelding"}}Papirsykmelding {{/eq}} {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}Egenmeldt {{/eq}} {{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}Sykmelding for {{ pasient.fornavn }}{{#if pasient.mellomnavn }} {{pasient.mellomnavn}}{{/if}} {{pasient.etternavn}}</title>
+    <title>
+        {{#each merknader}}
+            {{#eq type "UGYLDIG_TILBAKEDATERING" }}
+                AVSLÅTT
+            {{/eq}}
+        {{/each}}
+        {{#eq sykmelding.avsenderSystem.navn "Papirsykmelding"}}Papirsykmelding {{/eq}}
+        {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}Egenmeldt {{/eq}}
+        {{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}Sykmelding for {{ pasient.fornavn }} {{#if pasient.mellomnavn }} {{pasient.mellomnavn}}{{/if}} {{pasient.etternavn}}</title>
 </head>
 <body>
 <table class="header">
     <thead>
     <tr>
-        <td class="tr75">{{#eq sykmelding.avsenderSystem.navn "Papirsykmelding"}}Papirsykmelding {{/eq}} {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}EGENMELDING FOR SELVSTENDIG NÆRINGSDRIVENDE ELLER FRILANSER {{/eq}} {{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}SYKMELDING</td>
+        <td class="tr75">
+            {{#each merknader}}
+                {{#eq type "UGYLDIG_TILBAKEDATERING" }}
+                    AVSLÅTT
+                {{/eq}}
+             {{/each}}
+             {{#eq sykmelding.avsenderSystem.navn "Papirsykmelding"}}Papirsykmelding {{/eq}} {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}EGENMELDING FOR SELVSTENDIG NÆRINGSDRIVENDE ELLER FRILANSER {{/eq}} {{#eq validationResult.status "INVALID" }}AVVIST {{/eq}}SYKMELDING</td>
         <td>NAVs eksemplar</td>
     </tr>
     <tr>
@@ -918,6 +932,36 @@
     </tbody>
 </table>
 {{/eq}}
+
+{{#if merknader }}
+    <table>
+        <thead>
+        <tr>
+            <td><h4>-</h4></td>
+            <td><h4>Merknader</h4></td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+            {{#each merknader}}
+                {{#eq type "UGYLDIG_TILBAKEDATERING" }}
+                    <tr>
+                        <td></td>
+                        <td><h4>Avslått</h4></td>
+                        <td>Sykmeldingen er registrert med merknad om avslag pga. ugyldig tilbakedatering.</td>
+                    </tr>
+                {{/eq}}
+                {{#eq type "TILBAKEDATERING_KREVER_FLERE_OPPLYSNINGER" }}
+                    <tr>
+                        <td></td>
+                        <td><h4>Krever flere opplysninger</h4></td>
+                        <td>NAV trenger flere opplysninger for å vurdere om sykmeldingen gir rett på sykepenger for den tilbakedaterte perioden.</td>
+                    </tr>
+                {{/eq}}
+            {{/each}}
+        </tbody>
+    </table>
+{{/if}}
 
 <table class="footer">
     <thead>
