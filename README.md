@@ -1,6 +1,6 @@
 [![Build status](https://github.com/navikt/syfopdfgen/workflows/Deploy%20to%20dev%20and%20prod/badge.svg)](https://github.com/navikt/syfopdfgen/workflows/Deploy%20to%20dev%20and%20prod/badge.svg)
 # PdfGen
-Repository for digisyfo pdfgen templates.
+Repository for team sykmelding pdfgen templates.
 
 ## Technologies & Tools
 
@@ -22,7 +22,7 @@ docker run \
         -e DISABLE_PDF_GET=false \
         -it \
         --rm \
-        navikt/pdfgen
+        ghcr.io/navikt/pdfgen:1.4.3
 ```
 
 Or you can use the convenience script `./run_development.sh`
