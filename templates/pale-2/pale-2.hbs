@@ -127,7 +127,7 @@
         <td>Arbeidsavklaringspenger</td>
         <td>{{#if legeerklaering.arbeidsavklaringspenger}}X{{/if}}</td>
     </tr>
-     <tr>
+    <tr>
         <td><h4>0.3</h4></td>
         <td>YrkesrettetAttfoering</td>
         <td>{{#if legeerklaering.yrkesrettetAttforing }}X{{/if}}</td>
@@ -137,6 +137,7 @@
         <td>Uførepensjon</td>
         <td>{{#if legeerklaering.uforepensjon }}X{{/if}}</td>
     </tr>
+    </tbody>
 </table>
 
 <table class="infoblock">
@@ -275,8 +276,8 @@
     </tr>
     </thead>
     <tbody>
+        {{#if legeerklaering.plan.utredning }}
         <tr>
-            {{#if legeerklaering.plan.utredning }}
             <td><h4>3.1</h4></td>
             <td>
                 <h4>Er pasienten henvist til Utreding</h4>
@@ -301,7 +302,7 @@
             </td>
             <td>
                 <h4>3.2.1 Dato for henvisn..</h4>
-                {{iso_to_nor_date legeerklaering.plan.behandling.dato }}
+                {{ iso_to_nor_date legeerklaering.plan.behandling.dato }}
             </td>
             <td>
                 <h4>3.2.2 Antatt ventetid (uker).</h4>
@@ -635,6 +636,7 @@
         <td class="tr60"><h4>Begrunnelse for avvising</h4></td>
     </tr>
     </thead>
+    <tbody>
     <tr>
         <td colspan="0"></td>
         <td>
