@@ -2,7 +2,7 @@
 
 CURRENT_PATH="$(cd "$(dirname "$1")"; pwd)/$(basename "$1")"
 
-docker pull ghcr.io/navikt/pdfgen:1.4.3
+docker pull navikt/pdfgen:52da08ebd00cc0ff9e2c0bee821a2a17097755ce
 docker run \
         -v $CURRENT_PATH/templates:/app/templates \
         -v $CURRENT_PATH/fonts:/app/fonts \
@@ -13,4 +13,4 @@ docker run \
         -e JDK_JAVA_OPTIONS \
         -it \
         --rm \
-        ghcr.io/navikt/pdfgen:1.4.6
+        navikt/pdfgen:52da08ebd00cc0ff9e2c0bee821a2a17097755ce
