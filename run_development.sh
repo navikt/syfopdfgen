@@ -2,7 +2,7 @@
 
 CURRENT_PATH="$(cd "$(dirname "$1")"; pwd)/$(basename "$1")"
 
-docker pull ghcr.io/navikt/pdfgen:1.4.3
+docker pull ghcr.io/navikt/pdfgen:1.4.6
 docker run \
         -v $CURRENT_PATH/templates:/app/templates \
         -v $CURRENT_PATH/fonts:/app/fonts \
