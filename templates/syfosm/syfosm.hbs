@@ -590,7 +590,8 @@
                 </td>
             </tr>
         {{/if}}
-        {{#neq rulesetVersion "3"}}
+        {{#eq rulesetVersion "3"}}
+        {{else}}
             {{#if sykmelding.prognose.erIArbeid}}
                 <tr>
                     <td><h4>5.2</h4></td>
@@ -666,7 +667,7 @@
                 </tr>
                 {{/if}}
             {{/if}}
-        {{/neq}}
+        {{/eq}}
         
         </tbody>
     </table>
@@ -713,7 +714,8 @@
     </table>
 {{/if}}
 {{/eq}}
-{{#neq rulesetVersion "3"}}
+{{#eq rulesetVersion "3"}}
+{{else}}
     {{#any sykmelding.tiltakArbeidsplassen sykmelding.tiltakNAV sykmelding.andreTiltak}}
         <table>
             <thead>
@@ -756,7 +758,7 @@
             </tbody>
         </table>
     {{/any}}
-{{/neq}}
+{{/eq}}
 {{#if sykmelding.meldingTilNAV.beskrivBistand}}
     <table>
         <thead>
@@ -776,6 +778,7 @@
                     <td></td>
                     <td>{{ sykmelding.meldingTilNAV.beskrivBistand }}</td>
                 </tr>
+            {{/if}}
         {{else}}
             {{#if sykmelding.meldingTilNAV.bistandUmiddelbart}}
                 <tr>
