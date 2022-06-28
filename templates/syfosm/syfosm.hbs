@@ -182,7 +182,12 @@
         {{/eq}}
     </tr>
     <tr>
-        {{#eq sykmelding.avsenderSystem.navn "Egenmeldt" "||" rulesetVersion "3"}}
+        {{#eq rulesetVersion "3"}}
+            <td></td>
+            <td></td>
+            <td></td>
+        {{/eq}}
+        {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}
             <td></td>
             <td></td>
             <td></td>
