@@ -830,7 +830,7 @@
 {{#eq sykmelding.avsenderSystem.navn "Egenmeldt"}}
 
 {{else}}
-{{#if sykmelding.kontaktMedPasient.kontaktDato}}
+{{#any sykmelding.kontaktMedPasient.kontaktDato "||" sykmelding.kontaktMedPasient.begrunnelseIkkeKontakt}}
     <table>
         <thead>
         <tr>
@@ -862,7 +862,7 @@
         {{/if}}
         </tbody>
     </table>
-{{/if}}
+{{/any}}
 {{/eq}}
 
 
