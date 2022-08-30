@@ -1,3 +1,9 @@
+> **Warning**
+> No longer in use, divided into 2 apps: 
+> [smpdfgen](https://github.com/navikt/smpdfgen)
+> and
+> [pale-2-pdfgen](https://github.com/navikt/pale-2-pdfgen)
+
 [![Build status](https://github.com/navikt/syfopdfgen/workflows/Deploy%20to%20dev%20and%20prod/badge.svg)](https://github.com/navikt/syfopdfgen/workflows/Deploy%20to%20dev%20and%20prod/badge.svg)
 # PdfGen
 Repository for team sykmelding pdfgen templates.

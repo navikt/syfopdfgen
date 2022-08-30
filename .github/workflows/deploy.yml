@@ -1,35 +1,35 @@
-name: Deploy to dev and prod
-on:
-  push:
-    branches:
-      - master
-
-env:
-  IMAGE: ghcr.io/${{ github.repository }}/syfopdfgen:${{ github.sha }}
-
-jobs:
-  build-push-deploy:
-    name: Checkout code and create docker tag
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v1
-      - name: Build and publish Docker image
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          docker build --tag ${IMAGE} .
-          docker login ghcr.io -u ${GITHUB_REPOSITORY} -p ${GITHUB_TOKEN}
-          docker push ${IMAGE}
-      - name: deploy to dev-gcp
-        uses: nais/deploy/actions/deploy@master
-        env:
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY_TEAMSYKMELDING }}
-          CLUSTER: dev-gcp
-          RESOURCE: naiserator-dev.yaml
-      - name: deploy to prod-gcp
-        uses: nais/deploy/actions/deploy@master
-        env:
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY_TEAMSYKMELDING }}
-          CLUSTER: prod-gcp
-          RESOURCE: naiserator-prod.yaml
+#name: Deploy to dev and prod
+#on:
+#  push:
+#    branches:
+#      - master
+#
+#env:
+#  IMAGE: ghcr.io/${{ github.repository }}/syfopdfgen:${{ github.sha }}
+#
+#jobs:
+#  build-push-deploy:
+#    name: Checkout code and create docker tag
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v1
+#      - name: Build and publish Docker image
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        run: |
+#          docker build --tag ${IMAGE} .
+#          docker login ghcr.io -u ${GITHUB_REPOSITORY} -p ${GITHUB_TOKEN}
+#          docker push ${IMAGE}
+#      - name: deploy to dev-gcp
+#        uses: nais/deploy/actions/deploy@master
+#        env:
+#          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY_TEAMSYKMELDING }}
+#          CLUSTER: dev-gcp
+#          RESOURCE: naiserator-dev.yaml
+#      - name: deploy to prod-gcp
+#        uses: nais/deploy/actions/deploy@master
+#        env:
+#          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY_TEAMSYKMELDING }}
+#          CLUSTER: prod-gcp
+#          RESOURCE: naiserator-prod.yaml
